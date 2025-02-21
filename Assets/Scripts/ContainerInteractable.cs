@@ -9,6 +9,7 @@ public class ContainerInteractable : Interactable
     {
         if (heldItem != null)
         {
+            //If there is not a stored item and you are holding something, store the item and remove it from your player in memory
             if (storedItem == null)
             {
                 storedItem = heldItem;
@@ -16,6 +17,9 @@ public class ContainerInteractable : Interactable
             }
             else
             {
+                //This code is meant to swap the memory location between a held item and a stored item
+                //Evidently, it was very buggy
+
                 /*
                 Transform temp = heldItem;
                 player.GetComponent<PlayerInteraction>().heldItem = storedItem;
@@ -25,6 +29,7 @@ public class ContainerInteractable : Interactable
         }
         else
         {
+            //If there is a stored item and you are not holding something, remove the item and and place it in your player in memory
             if (storedItem != null)
             {
                 player.GetComponent<PlayerInteraction>().heldItem = storedItem;
