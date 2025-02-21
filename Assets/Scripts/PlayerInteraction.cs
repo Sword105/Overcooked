@@ -47,7 +47,7 @@ public class PlayerInteraction : MonoBehaviour
     Collider FindClosestInteractable(Collider[] objects)
     {
         Collider nearest = null;
-        float smallestDistance = Vector3.Distance(player.transform.position, objects[0].transform.position);
+        float smallestDistance = 10000;
         foreach (Collider other in objects)
         {
             //Finds the closest interactable object that is not the held item

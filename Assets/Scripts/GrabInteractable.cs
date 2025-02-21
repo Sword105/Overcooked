@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+[RequireComponent(typeof(Rigidbody))]
 public class GrabInteractable : Interactable
 {
     //Determines whether a object is grabable based on whether it is being held or not
