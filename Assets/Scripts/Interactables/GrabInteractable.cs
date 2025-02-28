@@ -4,8 +4,13 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Rigidbody))]
+//[RequireComponent(typeof(AudioSource))]
+
 public class GrabInteractable : Interactable
 {
+    //public AudioSource audioSource;
+    public AudioClip interactSound;
+
     //Determines whether a object is grabable based on whether it is being held or not
     void Update()
     {
@@ -31,6 +36,11 @@ public class GrabInteractable : Interactable
             transform.GetComponent<Rigidbody>().isKinematic = true;
             transform.GetComponent<SphereCollider>().isTrigger = true;
             player.GetComponent<PlayerInteraction>().heldItem = transform;
+
+            if (interactSound != null)
+            {
+                AudioManager.instance.PlaySoundFX(interactSound, transform, 1f);
+            }
         }
         else
         {
