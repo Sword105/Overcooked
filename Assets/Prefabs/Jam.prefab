@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6690498942012790658}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0094099045, y: 1.55, z: -5.21}
+  m_LocalPosition: {x: -0.30608988, y: 0.6700001, z: -3.474397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: jam
   recipe: {fileID: 0}
+  foodObject: {fileID: 6690498942012790658}

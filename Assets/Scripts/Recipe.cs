@@ -7,6 +7,7 @@ public class Recipe : MonoBehaviour
 {
      public Food food1;
     public Food food2;
+    public Food result;
     public string recipeName;
 
     public Recipe(Food food1, Food food2, string recipeName) {

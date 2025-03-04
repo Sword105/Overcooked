@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1985936465309588838}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0094099045, y: 0.95, z: -4.71}
+  m_LocalPosition: {x: -0.5743308, y: 0.67000055, z: -9.6627865}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: bread
   recipe: {fileID: 0}
+  foodObject: {fileID: 1985936465309588838}

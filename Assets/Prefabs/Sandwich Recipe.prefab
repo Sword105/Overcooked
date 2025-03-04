@@ -46,4 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food1: {fileID: 6909888352867209326, guid: 1f3f6b92669678a4e8265e6f4fcae593, type: 3}
   food2: {fileID: 2007113256560068519, guid: e14f189f7fae3ce4bae4c37961cc3103, type: 3}
+  result: {fileID: 1338437906280901873, guid: 653a94d81733ce5459f7ade6a8dd2de9, type: 3}
   recipeName: sandwich

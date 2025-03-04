@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 9144651173709189249}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0094099045, y: 1.18, z: -4.9}
+  m_LocalPosition: {x: 2.6373026, y: 0.6700003, z: -8.348443}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: sandwich
   recipe: {fileID: 8466588834225375838, guid: da4969f9d916222489d4bf77deaa4121, type: 3}
+  foodObject: {fileID: 9144651173709189249}

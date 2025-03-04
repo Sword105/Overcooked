@@ -44,7 +44,7 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     //Finds the closest interactable from a range of objects (meant to be used alongside Physics.OverlapSphere()) 
-    Collider FindClosestInteractable(Collider[] objects)
+    public Collider FindClosestInteractable(Collider[] objects)
     {
         Collider nearest = null;
         float smallestDistance = 10000;
