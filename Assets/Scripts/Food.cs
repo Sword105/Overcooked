@@ -42,6 +42,18 @@ public class Food : GrabInteractable
             GameObject result = Instantiate(player.GetComponent<RecipesList>().FindRecipe(this, player.GetComponent<PlayerInteraction>().heldItem.GetComponent<Food>()).result.foodObject,
              transform.position, transform.rotation);
 
+             Destroy(this.foodObject);
+             Destroy(player.GetComponent<PlayerInteraction>().heldItem.GetComponent<Food>().foodObject);
+
+             result.transform.SetParent(player.transform);
+             result.transform.position = player.transform.position + player.transform.forward;
+             result.transform.rotation = Quaternion.identity;
+             
+             result.transform.GetComponent<Rigidbody>().isKinematic = true;
+             result.transform.GetComponent<SphereCollider>().isTrigger = true;
+             player.GetComponent<PlayerInteraction>().heldItem = result.transform;
+
+
              
 
             }
