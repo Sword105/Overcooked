@@ -5,16 +5,13 @@ using UnityEngine;
 // Recipe class to create a recipe using two Food objects
 public class Recipe : MonoBehaviour
 {
+
+    //A recipe consist on two Food objects, the result of the combination, and a name for that recipe.
      public Food food1;
     public Food food2;
     public Food result;
     public string recipeName;
 
-    public Recipe(Food food1, Food food2, string recipeName) {
-        this.food1 = food1;
-        this.food2 = food2;
-        this.recipeName = recipeName;
-    }
 
     //This may be useful in the future, returns true if two given Food objects are part of the recipe
     public bool Matches(Food f1, Food f2) {

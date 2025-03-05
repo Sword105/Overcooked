@@ -36,12 +36,13 @@ public class Food : GrabInteractable
             (player.transform.forward * player.GetComponent<PlayerInteraction>().interactionForwardOffset), player.GetComponent<PlayerInteraction>().interactionRange);
          
             Collider nearestInteractable = player.GetComponent<PlayerInteraction>().FindClosestInteractable(nearbyObjects);
-            
+            //Checking if we can combine two Food objects, and doing so
             if(player.GetComponent<RecipesList>().FindRecipe(this, player.GetComponent<PlayerInteraction>().heldItem.GetComponent<Food>()) != null){
             Debug.Log("Cooking available");
             GameObject result = Instantiate(player.GetComponent<RecipesList>().FindRecipe(this, player.GetComponent<PlayerInteraction>().heldItem.GetComponent<Food>()).result.foodObject,
              transform.position, transform.rotation);
 
+            //destroying the two original food objects, and setting the new object as a heldItem
              Destroy(this.foodObject);
              Destroy(player.GetComponent<PlayerInteraction>().heldItem.GetComponent<Food>().foodObject);
 
