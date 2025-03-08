@@ -5,6 +5,9 @@ using UnityEngine;
 public class ContainerInteractable : Interactable
 {
     public Transform storedItem = null;
+    public AudioClip interactSound;
+    public List<Recipe> recipeList;
+
     public override void Interact(GameObject player, Transform heldItem)
     {
         if (heldItem != null)
@@ -14,6 +17,11 @@ public class ContainerInteractable : Interactable
             {
                 storedItem = heldItem;
                 player.GetComponent<PlayerInteraction>().heldItem = null;
+
+                if (interactSound != null)
+                {
+                    AudioManager.instance.PlaySoundFX(interactSound, transform, 1f);
+                }
             }
             else
             {
@@ -36,5 +44,18 @@ public class ContainerInteractable : Interactable
                 storedItem = null;
             }
         }
+    }
+
+    //This may be useful, finds a recipe given two Food objects
+    public Recipe FindRecipe(ItemType item)
+    {
+        foreach (Recipe recipe in recipeList)
+        {
+            if (recipe.inputFoodItem == item)
+            {
+                return recipe;
+            }
+        }
+        return null;
     }
 }
