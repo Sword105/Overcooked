@@ -1,32 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class MovementScript3 : MonoBehaviour
 {
     
     public Rigidbody player;
-    public Vector3 InputKey;
     public float speed = 10f;
     float weirdFloat;
 
+    private Vector3 movementInput = Vector3.zero;
 
 
-    void Update() {
-        
-    InputKey = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized; //makes -1 and 1 for movement signaling
+    public void OnMove(InputAction.CallbackContext context) {
+        movementInput = new Vector3(context.ReadValue<Vector2>().x, 0, context.ReadValue<Vector2>().y);
 
     }
 
    
     void FixedUpdate() {
 
-        player.MovePosition((Vector3)transform.position + InputKey * speed * Time.deltaTime); // movementposition used for movement, vector3 for 3d
+        player.MovePosition((Vector3)transform.position + movementInput * speed * Time.deltaTime); // movementposition used for movement, vector3 for 3d
 
         //makes the magnitude thing so that if you are clicking on a button or not - keeps character looking in the same direction
-        if(InputKey.magnitude >=0.1f){
+        if(movementInput.magnitude >=0.1f){
 
-        float angle = Mathf.Atan2(InputKey.x, InputKey.z) * Mathf.Rad2Deg; //certain math thing that apparently almost all games use,
+        float angle = Mathf.Atan2(movementInput.x, movementInput.z) * Mathf.Rad2Deg; //certain math thing that apparently almost all games use,
                                                                             //to make character face certain direction
 
         float smooth = Mathf.SmoothDampAngle(transform.eulerAngles.y, angle, ref weirdFloat, 0.1f); //makes a smooth rotation variable for character to turn smoothly
@@ -41,6 +39,8 @@ public class MovementScript3 : MonoBehaviour
     
 
     }
+
+
 
 
 }
