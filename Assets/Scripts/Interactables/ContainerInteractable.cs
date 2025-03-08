@@ -51,7 +51,7 @@ public class ContainerInteractable : Interactable
     {
         foreach (Recipe recipe in recipeList)
         {
-            if (recipe.inputItem == item)
+            if (recipe.inputFoodItem == item)
             {
                 return recipe;
             }
