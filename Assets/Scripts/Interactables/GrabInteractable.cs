@@ -10,6 +10,7 @@ public class GrabInteractable : Interactable
 {
     //public AudioSource audioSource;
     public AudioClip interactSound;
+    public ItemType itemType; 
 
     //Determines whether a object is grabable based on whether it is being held or not
     void Update()
