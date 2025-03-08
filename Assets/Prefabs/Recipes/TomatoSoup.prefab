@@ -41,8 +41,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6339162352289508871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3526f17a4b9e95f4cb2bcbb2af89dd10, type: 3}
+  m_Script: {fileID: 11500000, guid: e82756a48507d7a4bb60204f6c251c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputItem: 2
-  outputItem: 4
+  requiredItem: 1
+  inputFoodItem: 5
+  outputFoodItem: 7
