@@ -11,9 +11,10 @@ public class Ratattouille : MonoBehaviour
     
     if(getobject(self) isTouching getobject(floor))
     {
-    activate a custom timer
+    activate a custom timer giannisakritidis.com/blog/Unity-Timers/
+    Timer should pause when food is picked up
     listen.(eventsthatmightinfluencetimer)
-    after timer ends: SummonRat().Invoke
+    after timer ends: SummonRat().Invoke (use events cause it decouples)
     }
 
 
@@ -27,22 +28,11 @@ public class Ratattouille : MonoBehaviour
     }
 
     Rat States
-    { Passive (waiting to be activated off screen, does nothing), Active (Main Default State), 
+    { Passive (waiting to be activated off screen, does nothing), Active (Main Default State), Scurry (going to food),
 
 
     event ratpocalypse
     (summon in a fuck ton of rats)
 
     */
-
-
-  
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        
-    }
 }
