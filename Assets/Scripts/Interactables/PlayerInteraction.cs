@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class PlayerInteraction : MonoBehaviour
@@ -11,6 +12,17 @@ public class PlayerInteraction : MonoBehaviour
     public float interactionRange = 0.8f;
     public float interactionForwardOffset = 1.3f;
 
+    private bool isInteracting = false;
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        //isInteracting = context.ReadValue<bool>();
+        if (context.performed)
+        {
+            isInteracting = true;
+        }
+        Debug.Log(isInteracting);
+    }
+
     void Update()
     {
         //Gets an array of objects within a radius in front of the player and finds the closest one
@@ -18,20 +30,19 @@ public class PlayerInteraction : MonoBehaviour
         Collider nearestInteractable = FindClosestInteractable(nearbyObjects);
 
         //Interacts with the closest interactable object
-        if (Input.GetKeyDown(KeyCode.Space) && nearestInteractable != null && nearestInteractable.GetComponent<Interactable>() != null)
+        if (isInteracting && nearestInteractable != null && nearestInteractable.GetComponent<Interactable>() != null)
         {
             Debug.Log("Interactable detected, trying interaction");
             nearestInteractable.GetComponent<Interactable>().Interact(player, heldItem);
         }
-
         //Drops held object and enables its physics
-        if (Input.GetKeyDown(KeyCode.Q) && heldItem != null)
+        else if (isInteracting && heldItem != null)
         {
             heldItem.GetComponent<Rigidbody>().isKinematic = false;
             heldItem.GetComponent<SphereCollider>().isTrigger = false;
 
-            heldItem.transform.SetParent(null);
-            heldItem = null;   
+            heldItem.transform.SetParent(null, true);
+            heldItem = null;
         }
 
         //Failsafe in case two players interact with an object at the same time
@@ -41,6 +52,8 @@ public class PlayerInteraction : MonoBehaviour
             heldItem = null;
             temp.GetComponentInChildren<GrabInteractable>().Interact(player, null);
         }
+
+        isInteracting = false;
     }
 
     //Finds the closest interactable from a range of objects (meant to be used alongside Physics.OverlapSphere()) 

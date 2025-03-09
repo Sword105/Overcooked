@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Table : ContainerInteractable
+public class StorageContainer : ContainerInteractable
 {
     public override void Interact(GameObject player, Transform heldItem)
     {
@@ -12,7 +12,7 @@ public class Table : ContainerInteractable
             if (storedItem == null)
             {
                 heldItem.transform.position = transform.position + new Vector3(0, 1, 0);
-                heldItem.transform.SetParent(transform);
+                heldItem.transform.SetParent(transform, true);
             }
             else
             {

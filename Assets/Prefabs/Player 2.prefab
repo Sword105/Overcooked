@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5884050048267832622}
   - component: {fileID: 2046602924308935065}
   - component: {fileID: 4092723332301130405}
+  - component: {fileID: -5188411705930700770}
   - component: {fileID: 7672549125795414888}
   m_Layer: 0
   m_Name: Player 2
@@ -149,8 +150,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2046602924308935065}
-  InputKey: {x: 0, y: 0, z: 0}
   speed: 10
+--- !u!114 &-5188411705930700770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461031802003329819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752c0c8c9ae82f240af9d497b56d0a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2461031802003329819}
+  heldItem: {fileID: 0}
+  interactionRange: 0.8
+  interactionForwardOffset: 1.3
 --- !u!114 &7672549125795414888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +197,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11500000, guid: 444100fef6812884cbaf1278a74c7b65, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
+        m_MethodName: 
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -193,6 +209,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c0edff44-1f57-4909-9c4f-df9c6f3f3294
     m_ActionName: player/Movement[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4239e6d3-92df-475c-ad67-eea435383383
+    m_ActionName: player/Interact[/Keyboard/e,/DualSenseGamepadHID/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Controller
   m_DefaultActionMap: player
