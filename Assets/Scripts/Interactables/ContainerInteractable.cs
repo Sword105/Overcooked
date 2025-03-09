@@ -6,7 +6,19 @@ public class ContainerInteractable : Interactable
 {
     public Transform storedItem = null;
     public AudioClip interactSound;
+
+    //NOTE: Remove this and place this line of code in ActionContainers and TimedContainers, but NOT in StorageContainers
     public List<Recipe> recipeList;
+
+    public void Update()
+    {
+        //Failsafe in case the player grabs the object, but the program forgets to remove the storedItem from memory
+        //Note: I do not know why this issue happens sometimes for some people but not for others
+        if (storedItem != null && transform.GetComponentInChildren<GrabInteractable>() == null)
+        {
+            storedItem = null;
+        }
+    }
 
     public override void Interact(GameObject player, Transform heldItem)
     {
