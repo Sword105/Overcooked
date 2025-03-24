@@ -9,11 +9,12 @@ public class Ratattouille : MonoBehaviour
      
     custom trait to be added to food types: 
     
-    if(getobject(self) isTouching getobject(floor))
+    if(this.gameObject isTouching getobject(floor))
     {
     activate a custom timer giannisakritidis.com/blog/Unity-Timers/
     Timer should pause when food is picked up
-    listen.(eventsthatmightinfluencetimer)
+    listen.(eventsthatmightinfluencetimer) POTENTIAL ISSUE: becuase the if statement depends on if its touching the floor
+    cant activate the timers deactivation
     after timer ends: SummonRat().Invoke (use events cause it decouples)
     }
 
@@ -21,14 +22,38 @@ public class Ratattouille : MonoBehaviour
 
     rats listen in on the signal of spoiled food
 
-    if (spoiled food signal invoked)
+    //IDEA: if (spoiled food signal invoked)
+    //grab a random waiting rat (if there are no more waiting rats, spawn one in, saves memory, uses preexisting ones first)
+    
+    
+    public static event 
+    
+    int ratCounter = 0; //must be persistently tracked throughout the level
+    if (ratCounter < 11) //if the counter is less than the rats pre-placed in level
     {
-    //grab a random waiting rat (if there are no more waiting rats, spawn one in)
-    //activate RatActive state
+        findRat(ratCounter); //find one of those pre-placed rats and use them
+    }
+    else 
+    {
+        spawnRat() //otherwise, create a new one
+    }
+        
+    findRat(int ratCounter) {
+        if (rat[ratCounter] == Passive) 
+        {
+            set ratstate for rat[ratCounter] as Active //POTENTIAL PROBLEM: removing a rat coutner and calling a rat after might bug out, might need a queue system
+        }
+        else
+        {
+            findRat(++ratCounter)
+        }
     }
 
     Rat States
-    { Passive (waiting to be activated off screen, does nothing), Active (Main Default State), Scurry (going to food),
+    { 
+    Passive (waiting to be activated off screen, does nothing), Active (Main Default State), Scurry (going to food),
+    Eating (standing at food), 
+    }
 
 
     event ratpocalypse
