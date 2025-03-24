@@ -43,6 +43,8 @@ public class PlayerInteraction : MonoBehaviour
 
             heldItem.transform.SetParent(null, true);
             heldItem = null;
+
+            Debug.Log("Dropping held item");
         }
 
         //Failsafe in case two players interact with an object at the same time
@@ -69,7 +71,7 @@ public class PlayerInteraction : MonoBehaviour
             if (currentDistance < smallestDistance && other.transform.GetComponent<Interactable>() != null && !other.transform.Equals(heldItem))
             {
                 //Ignore if the interactable is NOT a grabable object or if it is an empty container object
-                if (heldItem == null && other.GetComponent<GrabInteractable>() == null && other.GetComponent<ContainerInteractable>().storedItem == null)
+                if (heldItem == null && other.GetComponent<GrabInteractable>() == null && other.GetComponent<ContainerInteractable>().storedItem == null && other.tag != "Grabbable")
                 {
                     continue;
                 }
