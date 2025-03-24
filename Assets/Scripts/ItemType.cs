@@ -3,6 +3,7 @@ public enum ItemType
     NONE,
     POT,
     PAN,
+    PLATE,
     
     TOMATO,
     CHOPPED_TOMATO,

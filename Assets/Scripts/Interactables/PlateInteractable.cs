@@ -34,7 +34,7 @@ public class PlateInteractable : GrabInteractable
             if (foodModel == null)
             {
                 heldItem.rotation = Quaternion.identity;
-                heldItem.position = transform.position + transform.up * 1.2f;
+                heldItem.position = new Vector3(transform.position.x, transform.GetComponent<MeshRenderer>().bounds.max.y + heldItem.GetComponent<MeshRenderer>().bounds.extents.y, transform.position.z);
                 heldItem.SetParent(transform, true);
 
                 heldItem.GetComponent<Rigidbody>().isKinematic = true;
