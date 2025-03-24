@@ -31,7 +31,6 @@ public class PlateInteractable : GrabInteractable
             //If the player is holding nothing, reset the object's rotation, place it in front of the player, and disable its physics
             foodStored.Add(heldItem.GetComponent<GrabInteractable>().itemType);
 
-
             if (foodModel == null)
             {
                 heldItem.rotation = Quaternion.identity;
@@ -39,7 +38,7 @@ public class PlateInteractable : GrabInteractable
                 heldItem.SetParent(transform, true);
 
                 heldItem.GetComponent<Rigidbody>().isKinematic = true;
-                heldItem.GetComponent<SphereCollider>().isTrigger = true;
+                heldItem.GetComponent<Collider>().isTrigger = true;
                 player.GetComponent<PlayerInteraction>().heldItem = null;
 
                 foodModel = heldItem.gameObject;
@@ -62,7 +61,14 @@ public class PlateInteractable : GrabInteractable
         {
             base.Interact(player, heldItem);
         }
+    }
 
-        
+    //Checks if the plate will be used for a burger
+    public void BurgerCheck(GameObject foodModel)
+    {
+        if (foodStored[0] == ItemType.BURGER_BUNS)
+        {
+            // Change the model depending on following if-statements
+        }
     }
 }

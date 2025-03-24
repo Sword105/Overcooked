@@ -39,7 +39,7 @@ public class PlayerInteraction : MonoBehaviour
         else if (isInteracting && heldItem != null)
         {
             heldItem.GetComponent<Rigidbody>().isKinematic = false;
-            heldItem.GetComponent<SphereCollider>().isTrigger = false;
+            heldItem.GetComponent<Collider>().isTrigger = false;
 
             heldItem.transform.SetParent(null, true);
             heldItem = null;
