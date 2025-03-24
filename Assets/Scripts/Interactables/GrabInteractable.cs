@@ -10,6 +10,7 @@ public class GrabInteractable : Interactable
 {
     //public AudioSource audioSource;
     public AudioClip interactSound;
+    public ItemType itemType; 
 
     //Determines whether a object is grabable based on whether it is being held or not
     void Update()
@@ -29,9 +30,9 @@ public class GrabInteractable : Interactable
         if (heldItem == null && transform.tag == "Grabbable")
         {
             //If the player is holding nothing, reset the object's rotation, place it in front of the player, and disable its physics
-            transform.SetParent(player.transform);
-            transform.position = player.transform.position + player.transform.forward;
             transform.rotation = Quaternion.identity;
+            transform.position = player.transform.position + player.transform.forward * 1.2f;
+            transform.SetParent(player.transform, true);
 
             transform.GetComponent<Rigidbody>().isKinematic = true;
             transform.GetComponent<SphereCollider>().isTrigger = true;
