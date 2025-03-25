@@ -35,7 +35,7 @@ public class GrabInteractable : Interactable
             transform.SetParent(player.transform, true);
 
             transform.GetComponent<Rigidbody>().isKinematic = true;
-            transform.GetComponent<SphereCollider>().isTrigger = true;
+            transform.GetComponent<Collider>().isTrigger = true;
             player.GetComponent<PlayerInteraction>().heldItem = transform;
 
             if (interactSound != null)

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StorageContainer : ContainerInteractable
@@ -11,7 +12,7 @@ public class StorageContainer : ContainerInteractable
             //If there is not a stored item and you are holding something, place it down on the table
             if (storedItem == null)
             {
-                heldItem.transform.position = transform.position + new Vector3(0, 1, 0);
+                heldItem.transform.position = new Vector3(transform.position.x, transform.GetComponent<MeshRenderer>().bounds.max.y + heldItem.GetComponent<MeshRenderer>().bounds.extents.y, transform.position.z);
                 heldItem.transform.SetParent(transform, true);
             }
             else
