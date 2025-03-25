@@ -1,13 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ContainerInteractable : Interactable
 {
-    public Transform storedItem = null;
+    [NonSerialized] public Transform storedItem = null;
     public AudioClip interactSound;
 
-    //NOTE: Remove this and place this line of code in ActionContainers and TimedContainers, but NOT in StorageContainers
+    //NOTE TO SELF: Remove this and place this line of code in ActionContainers and TimedContainers, but NOT in StorageContainers
     public List<Recipe> recipeList;
 
     public void Update()
@@ -25,6 +26,7 @@ public class ContainerInteractable : Interactable
         if (heldItem != null)
         {
             //If there is not a stored item and you are holding something, store the item and remove it from your player in memory
+
             if (storedItem == null)
             {
                 storedItem = heldItem;
@@ -34,17 +36,6 @@ public class ContainerInteractable : Interactable
                 {
                     AudioManager.instance.PlaySoundFX(interactSound, transform, 1f);
                 }
-            }
-            else
-            {
-                //This code is meant to swap the memory location between a held item and a stored item
-                //Evidently, it was very buggy
-
-                /*
-                Transform temp = heldItem;
-                player.GetComponent<PlayerInteraction>().heldItem = storedItem;
-                storedItem = temp;
-                */
             }
         }
         else

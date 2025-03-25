@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,16 +7,16 @@ using UnityEngine.UIElements;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public GameObject player;
-    public Transform heldItem = null;
+    //FYI, "NonSerialized" just hides the variable from the inspector
+
+    [NonSerialized] public GameObject player;
+    [NonSerialized] public Transform heldItem = null;
+    private bool isInteracting = false;
 
     public float interactionRange = 0.8f;
     public float interactionForwardOffset = 1.3f;
-
-    private bool isInteracting = false;
     public void OnInteract(InputAction.CallbackContext context)
     {
-        //isInteracting = context.ReadValue<bool>();
         if (context.performed)
         {
             isInteracting = true;
@@ -23,10 +24,17 @@ public class PlayerInteraction : MonoBehaviour
         Debug.Log(isInteracting);
     }
 
+    private void Start()
+    {
+        player = this.gameObject;
+    }
+
     void Update()
     {
         //Gets an array of objects within a radius in front of the player and finds the closest one
-        Collider[] nearbyObjects = Physics.OverlapSphere(player.transform.position + (player.transform.forward * interactionForwardOffset), interactionRange);
+        Vector3 interactionLocation = player.transform.position + (player.transform.forward * interactionForwardOffset);
+
+        Collider[] nearbyObjects = Physics.OverlapCapsule(interactionLocation + new Vector3(0, 1, 0), interactionLocation + new Vector3(0, -1, 0), interactionRange);
         Collider nearestInteractable = FindClosestInteractable(nearbyObjects);
 
         //Interacts with the closest interactable object

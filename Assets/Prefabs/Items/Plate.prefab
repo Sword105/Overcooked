@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactSound: {fileID: 0}
-  itemType: 0
+  itemType: 3
   foodStored: 
   foodModel: {fileID: 0}
 --- !u!65 &8968953238646751623

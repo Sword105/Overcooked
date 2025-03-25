@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 public class PlateInteractable : GrabInteractable
 {
     public List<ItemType> foodStored = new List<ItemType>();
-    [SerializeField] private GameObject foodModel;
+    private GameObject foodModel;
 
     //Determines whether a object is grabable based on whether it is being held or not
     void Update()
@@ -34,7 +34,7 @@ public class PlateInteractable : GrabInteractable
             if (foodModel == null)
             {
                 heldItem.rotation = Quaternion.identity;
-                heldItem.position = new Vector3(transform.position.x, transform.GetComponent<MeshRenderer>().bounds.max.y + heldItem.GetComponent<MeshRenderer>().bounds.extents.y, transform.position.z);
+                heldItem.position = new Vector3(transform.position.x, transform.GetComponent<MeshRenderer>().bounds.max.y + heldItem.GetComponent<MeshRenderer>().bounds.extents.y - 0.1f, transform.position.z);
                 heldItem.SetParent(transform, true);
 
                 heldItem.GetComponent<Rigidbody>().isKinematic = true;

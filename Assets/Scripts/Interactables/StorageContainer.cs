@@ -14,17 +14,12 @@ public class StorageContainer : ContainerInteractable
             {
                 heldItem.transform.position = new Vector3(transform.position.x, transform.GetComponent<MeshRenderer>().bounds.max.y + heldItem.GetComponent<MeshRenderer>().bounds.extents.y, transform.position.z);
                 heldItem.transform.SetParent(transform, true);
+                base.Interact(player, heldItem);
             }
-            else
-            {
-                //This code is meant to swap the positions between a held item and a store item
-                //Evidently, it was very buggy
 
-                /*
-                Vector3 temp = heldItem.position;
-                heldItem.position = storedItem.position;
-                storedItem.position = temp;
-                */
+            else if (storedItem.GetComponent<GrabInteractable>().itemType == ItemType.PLATE)
+            {
+                storedItem.GetComponent<GrabInteractable>().Interact(player, heldItem);
             }
         }
         else
@@ -34,10 +29,10 @@ public class StorageContainer : ContainerInteractable
             {
                 storedItem.GetComponent<GrabInteractable>().Interact(player, heldItem);
             }
+            base.Interact(player, heldItem);
         }
 
-        //Interact method from the ContainerInteractable class
+        //NOTE: base.Interact() calls Interact() is from the ContainerInteractable class
         //This updates the heldItem and storedItem variables in memory
-        base.Interact(player, heldItem);
     }
 }
