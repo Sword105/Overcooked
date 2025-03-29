@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ContainerInteractable : Interactable
 {
-    [NonSerialized] public Transform storedItem = null;
+    public Transform storedItem = null;
     public AudioClip interactSound;
 
     //NOTE TO SELF: Remove this and place this line of code in ActionContainers and TimedContainers, but NOT in StorageContainers

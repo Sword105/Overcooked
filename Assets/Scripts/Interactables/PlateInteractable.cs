@@ -14,7 +14,7 @@ public class PlateInteractable : GrabInteractable
     //Determines whether a object is grabable based on whether it is being held or not
     void Update()
     {
-        if (transform.GetComponentInParent<PlayerInteraction>() != null)
+        if (transform.GetComponentInParent<PlayerInteraction>() != null || transform.GetComponentInParent<PlateStation>() != null)
         {
             transform.tag = "Untagged";
         }
@@ -26,7 +26,7 @@ public class PlateInteractable : GrabInteractable
 
     public override void Interact(GameObject player, Transform heldItem)
     {
-        if (heldItem != null)
+        if (heldItem != null && heldItem.GetComponent<GrabInteractable>().itemType != ItemType.PLATE)
         {
             //If the player is holding nothing, reset the object's rotation, place it in front of the player, and disable its physics
             foodStored.Add(heldItem.GetComponent<GrabInteractable>().itemType);

@@ -10,7 +10,7 @@ public class PlayerInteraction : MonoBehaviour
     //FYI, "NonSerialized" just hides the variable from the inspector
 
     [NonSerialized] public GameObject player;
-    [NonSerialized] public Transform heldItem = null;
+    public Transform heldItem = null;
     private bool isInteracting = false;
 
     public float interactionRange = 0.8f;
@@ -40,7 +40,7 @@ public class PlayerInteraction : MonoBehaviour
         //Interacts with the closest interactable object
         if (isInteracting && nearestInteractable != null && nearestInteractable.GetComponent<Interactable>() != null)
         {
-            Debug.Log("Interactable detected, trying interaction");
+            Debug.Log("Interactable detected as " + nearestInteractable.name + ", trying interaction");
             nearestInteractable.GetComponent<Interactable>().Interact(player, heldItem);
         }
         //Drops held object and enables its physics
@@ -79,10 +79,15 @@ public class PlayerInteraction : MonoBehaviour
             if (currentDistance < smallestDistance && other.transform.GetComponent<Interactable>() != null && !other.transform.Equals(heldItem))
             {
                 //Ignore if the interactable is NOT a grabable object or if it is an empty container object
-                if (heldItem == null && other.GetComponent<GrabInteractable>() == null && other.GetComponent<ContainerInteractable>().storedItem == null && other.tag != "Grabbable")
+                if (heldItem == null && (other.GetComponent<GrabInteractable>() == null || !other.GetComponent<GrabInteractable>().isActiveAndEnabled)
+                    && (other.GetComponent<ContainerInteractable>() == null
+                    || other.GetComponent<ContainerInteractable>().storedItem == null
+                    && other.CompareTag("Grabbable")))
                 {
                     continue;
                 }
+
+
                 smallestDistance = currentDistance;
                 nearest = other;
             }
