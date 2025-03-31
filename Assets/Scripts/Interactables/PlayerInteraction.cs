@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,16 +7,16 @@ using UnityEngine.UIElements;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public GameObject player;
+    //FYI, "NonSerialized" just hides the variable from the inspector
+
+    [NonSerialized] public GameObject player;
     public Transform heldItem = null;
+    private bool isInteracting = false;
 
     public float interactionRange = 0.8f;
     public float interactionForwardOffset = 1.3f;
-
-    private bool isInteracting = false;
     public void OnInteract(InputAction.CallbackContext context)
     {
-        //isInteracting = context.ReadValue<bool>();
         if (context.performed)
         {
             isInteracting = true;
@@ -23,26 +24,35 @@ public class PlayerInteraction : MonoBehaviour
         Debug.Log(isInteracting);
     }
 
+    private void Start()
+    {
+        player = this.gameObject;
+    }
+
     void Update()
     {
         //Gets an array of objects within a radius in front of the player and finds the closest one
-        Collider[] nearbyObjects = Physics.OverlapSphere(player.transform.position + (player.transform.forward * interactionForwardOffset), interactionRange);
+        Vector3 interactionLocation = player.transform.position + (player.transform.forward * interactionForwardOffset);
+
+        Collider[] nearbyObjects = Physics.OverlapCapsule(interactionLocation + new Vector3(0, 1, 0), interactionLocation + new Vector3(0, -1, 0), interactionRange);
         Collider nearestInteractable = FindClosestInteractable(nearbyObjects);
 
         //Interacts with the closest interactable object
         if (isInteracting && nearestInteractable != null && nearestInteractable.GetComponent<Interactable>() != null)
         {
-            Debug.Log("Interactable detected, trying interaction");
+            Debug.Log("Interactable detected as " + nearestInteractable.name + ", trying interaction");
             nearestInteractable.GetComponent<Interactable>().Interact(player, heldItem);
         }
         //Drops held object and enables its physics
         else if (isInteracting && heldItem != null)
         {
             heldItem.GetComponent<Rigidbody>().isKinematic = false;
-            heldItem.GetComponent<SphereCollider>().isTrigger = false;
+            heldItem.GetComponent<Collider>().isTrigger = false;
 
             heldItem.transform.SetParent(null, true);
             heldItem = null;
+
+            Debug.Log("Dropping held item");
         }
 
         //Failsafe in case two players interact with an object at the same time
@@ -69,10 +79,15 @@ public class PlayerInteraction : MonoBehaviour
             if (currentDistance < smallestDistance && other.transform.GetComponent<Interactable>() != null && !other.transform.Equals(heldItem))
             {
                 //Ignore if the interactable is NOT a grabable object or if it is an empty container object
-                if (heldItem == null && other.GetComponent<GrabInteractable>() == null && other.GetComponent<ContainerInteractable>().storedItem == null)
+                if (heldItem == null && (other.GetComponent<GrabInteractable>() == null || !other.GetComponent<GrabInteractable>().isActiveAndEnabled)
+                    && (other.GetComponent<ContainerInteractable>() == null
+                    || other.GetComponent<ContainerInteractable>().storedItem == null
+                    && other.CompareTag("Grabbable")))
                 {
                     continue;
                 }
+
+
                 smallestDistance = currentDistance;
                 nearest = other;
             }

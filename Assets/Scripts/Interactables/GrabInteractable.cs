@@ -27,7 +27,7 @@ public class GrabInteractable : Interactable
 
     public override void Interact(GameObject player, Transform heldItem)
     {
-        if (heldItem == null && transform.tag == "Grabbable")
+        if (heldItem == null && transform.CompareTag("Grabbable"))
         {
             //If the player is holding nothing, reset the object's rotation, place it in front of the player, and disable its physics
             transform.rotation = Quaternion.identity;
@@ -35,7 +35,7 @@ public class GrabInteractable : Interactable
             transform.SetParent(player.transform, true);
 
             transform.GetComponent<Rigidbody>().isKinematic = true;
-            transform.GetComponent<SphereCollider>().isTrigger = true;
+            transform.GetComponent<Collider>().isTrigger = true;
             player.GetComponent<PlayerInteraction>().heldItem = transform;
 
             if (interactSound != null)
