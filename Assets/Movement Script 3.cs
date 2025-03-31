@@ -23,16 +23,24 @@ public class MovementScript3 : MonoBehaviour
     private float dashingCooldown = 1f;
     private bool isOnCoolDown = false;
     private float coolDownDashing = 0.75f;
-  
+
    
 
     private Vector3 movementInput = Vector3.zero;
+   // private bool dashed = false;
+    
 
 
     public void OnMove(InputAction.CallbackContext context) {
         movementInput = new Vector3(context.ReadValue<Vector2>().x, 0, context.ReadValue<Vector2>().y);
 
     }
+
+   /* public void OnDash(InputAction.CallbackContext context){
+        dashed = context.ReadValue<bool>();
+        dashed = context.action.triggered;
+    }
+   */
 
     void Start(){
 
@@ -77,7 +85,7 @@ public class MovementScript3 : MonoBehaviour
 
 
 
-private IEnumerator Dash() {
+   private IEnumerator Dash() {
     dashing = true;
     isOnCoolDown = true;
     currentDashes--;

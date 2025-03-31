@@ -150,6 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2046602924308935065}
   speed: 10
+  dashing: 1
+  dashCounter: 5
 --- !u!114 &7672549125795414888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +194,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c0edff44-1f57-4909-9c4f-df9c6f3f3294
     m_ActionName: player/Movement[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aa1d5130-ccf4-4474-9db1-74b93c5072ea
+    m_ActionName: player/Dash[/Keyboard/space,/XInputControllerWindows/buttonWest]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: player
