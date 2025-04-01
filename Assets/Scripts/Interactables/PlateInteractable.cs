@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,6 +11,7 @@ using UnityEngine.UIElements;
 public class PlateInteractable : GrabInteractable
 {
     public List<ItemType> foodStored = new List<ItemType>();
+    public List<ModelDataStorage> modelResources = new List<ModelDataStorage>();
     private GameObject foodModel;
 
     //Determines whether a object is grabable based on whether it is being held or not
@@ -56,6 +59,8 @@ public class PlateInteractable : GrabInteractable
             {
                 AudioManager.instance.PlaySoundFX(interactSound, transform, 1f);
             }
+
+            UpdateModel();
         }
         else
         {
@@ -64,11 +69,36 @@ public class PlateInteractable : GrabInteractable
     }
 
     //Checks if the plate will be used for a burger
-    public void BurgerCheck(GameObject foodModel)
+    public void UpdateModel()
     {
-        if (foodStored[0] == ItemType.BURGER_BUNS)
+        foreach (ModelDataStorage x in modelResources)
         {
-            // Change the model depending on following if-statements
+            foreach (ModelData y in x.storedModelData)
+            {
+                if (y.neededItems.Count != foodStored.Count)
+                {
+                    Debug.Log("skipped");
+                    continue;
+                }
+
+                bool foundItem = false;
+                for (int i = 0; i < y.neededItems.Count; i++)
+                {
+                    for (int j = 0; j < foodStored.Count; j++)
+                    {
+                        if (foodStored[j] == y.neededItems[i])
+                        {
+                            foundItem = true;
+                            Debug.Log("CANT FIND IT");
+                        }
+                    }
+                }
+
+                if (foundItem)
+                {
+                    foodModel.GetComponent<MeshFilter>().mesh = y.model;
+                }
+            }
         }
     }
 }
