@@ -13,9 +13,9 @@ public class PlateStation : ContainerInteractable
         storedItem = new GameObject().transform;
     }
 
+    // Delete later on, this is just for testing stacking
     new void Update()
     {
-        
         if (Input.GetKeyDown(KeyCode.P))
         {
             AddPlate();
@@ -61,7 +61,6 @@ public class PlateStation : ContainerInteractable
         newPlate.tag = "Untagged";
 
         plateStorage.Push(newPlate.GetComponent<PlateInteractable>());
-
     }
 }
 

@@ -44,8 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad236b4337bcae54e9a4b73240ae9f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modelIndicator: 7
+  allowedItemTypes: 0800000009000000050000000b000000
   storedModelData:
   - model: {fileID: 8314571269056883277, guid: 5de660a9e2605374aa03b9252e900555, type: 3}
     neededItems: 0700000008000000
   - model: {fileID: 2534964839176971238, guid: 83ef7b9dfcdcdf048a2086d2779d95d0, type: 3}
     neededItems: 070000000800000009000000
+  - model: {fileID: 6255687079079774844, guid: 23678eb765bce8049b84c82572acf28e, type: 3}
+    neededItems: 0700000008000000090000000b000000
