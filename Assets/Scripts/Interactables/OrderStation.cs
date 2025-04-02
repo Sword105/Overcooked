@@ -40,10 +40,11 @@ public class OrderStation : StorageContainer
                 if (correctOrder)
                 {
                     Debug.Log("Found order");
-                    levelManager.orders.Remove(x);
-                    levelManager.plateStation.AddPlate();
+                    levelManager.CompleteOrder(x);
+
                     base.Interact(player, heldItem);
                     Destroy(heldItem.GetComponent<Interactable>());
+
                     break;
                 }
             }

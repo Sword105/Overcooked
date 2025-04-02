@@ -14,6 +14,7 @@ public struct Order
 public class LevelManager : MonoBehaviour
 {
     public float maxTimeInSeconds = 300f;
+    public float timeForPlateRespawn = 10f;
     private bool timeEnded = false;
     private float currentTimeLeft;
 
@@ -45,5 +46,12 @@ public class LevelManager : MonoBehaviour
                 Debug.Log("Clock ended");
             }
         }
+    }
+
+    public void CompleteOrder(Order order)
+    {
+        Debug.Log("Tell NPC to pathfind");
+        orders.Remove(order);
+        plateStation.Invoke("AddPlate", timeForPlateRespawn);
     }
 }
