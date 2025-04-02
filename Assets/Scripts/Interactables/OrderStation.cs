@@ -5,10 +5,11 @@ using UnityEngine;
 public class OrderStation : StorageContainer
 {
     public LevelManager levelManager;
+    public Transform orderToPickUp;
 
     public override void Interact(GameObject player, Transform heldItem)
     {
-        if (heldItem.GetComponent<PlateInteractable>() != null)
+        if (heldItem.GetComponent<PlateInteractable>() != null && orderToPickUp == null)
         {
             foreach (Order x in levelManager.orders)
             {
@@ -42,6 +43,7 @@ public class OrderStation : StorageContainer
                     Debug.Log("Found order");
                     levelManager.CompleteOrder(x);
 
+                    orderToPickUp = heldItem;
                     base.Interact(player, heldItem);
                     Destroy(heldItem.GetComponent<Interactable>());
 
