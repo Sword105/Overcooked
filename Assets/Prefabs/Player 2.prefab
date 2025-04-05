@@ -151,6 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2046602924308935065}
   speed: 10
+  dashing: 1
+  dashCounter: 5
 --- !u!114 &-5188411705930700770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752c0c8c9ae82f240af9d497b56d0a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2461031802003329819}
   heldItem: {fileID: 0}
   interactionRange: 0.8
   interactionForwardOffset: 1.3
