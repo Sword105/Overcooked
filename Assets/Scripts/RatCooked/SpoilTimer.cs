@@ -24,31 +24,35 @@ public class SpoilTimer : MonoBehaviour
     rats listen in on the signal of spoiled food */
 
     [Header("Food is Touching Ground")]
-    [Tooltip("If the food is touching the ground")]
+    [Tooltip("bool for food touching the ground")]
     public bool OnGround = false;
-    [Tooltip("Kinda only matters if the ground is ever not flat but here just in case")]
+    [Tooltip("kinda only matters if the ground is ever not flat but here just in case")]
     public float GroundedOffset = -0.14f;
     [Tooltip("sphere radius for the grounded check")]
     public float GroundedRadius = 0.5f;
-    [Tooltip("the layer counted as ground")]
+    [Tooltip("layer for checking the ground")]
     public LayerMask GroundLayers;
+
+    private bool TimerOff = true; //used so that multiple timers don't happen
     
     private void MainProcess()
     {
-       if (OnGround)
+       if (OnGround && TimerOff)
        {
            //activate timer
+           TimerOff = false;
        } 
     }
 
     private void Update()
     {
         GroundedCheck();
+        MainProcess();
     }
 
     private void GroundedCheck()
     {
-        //first creates a spehere at the transforms position (basically at the foods position)
+        //first creates a sphere at the transforms position (basically at the foods position)
         Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
         //then checks if the sphere is touching a grounded layer using the position and radius, sets OnGround to true if touching a grounded layer
         OnGround = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers);
