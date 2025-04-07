@@ -18,7 +18,7 @@ public class TimedContainerInteractable : ContainerInteractable
 
             
             //If there is not a stored item and you are holding something, place it down on the table
-            if (storedItem == null)
+            if (storedItem == null && findInputItemInRecipeList(heldItem.GetComponent<GrabInteractable>().itemType) != -1)
             {
                 heldItem.transform.position = new Vector3(transform.position.x, transform.GetComponent<MeshRenderer>().bounds.max.y + heldItem.GetComponent<MeshRenderer>().bounds.extents.y, transform.position.z);
                 heldItem.transform.SetParent(transform, true);
@@ -28,9 +28,17 @@ public class TimedContainerInteractable : ContainerInteractable
                 StartTimer();
             }
 
-            else if (storedItem.GetComponent<GrabInteractable>().itemType == ItemType.PLATE)
+            else if(storedItem != null){
+                
+                if (storedItem.GetComponent<GrabInteractable>().itemType == ItemType.PLATE)
+                {
+                    storedItem.GetComponent<GrabInteractable>().Interact(player, heldItem);
+                }
+            }
+
+            else //storedItem = null
             {
-                storedItem.GetComponent<GrabInteractable>().Interact(player, heldItem);
+                Debug.Log("Not in recipeList");
             }
         }
         else
@@ -41,6 +49,8 @@ public class TimedContainerInteractable : ContainerInteractable
                 storedItem.GetComponent<GrabInteractable>().Interact(player, heldItem);
             }
             base.Interact(player, heldItem);
+
+        
         }
 
         //NOTE: base.Interact() calls Interact() is from the ContainerInteractable class
@@ -49,15 +59,20 @@ public class TimedContainerInteractable : ContainerInteractable
 
 
     
-    //Starts the timer
+    //Starts the timer in Update()
     public void StartTimer()
     {
         timer = timerDuration;
         isTiming = true;
+
+        Debug.Log("The food began to cook");
     }
 
+    
     void Update()
     {
+
+        //Starts cooking the storedItem
         if (isTiming)
         {
             timer -= Time.deltaTime;
@@ -68,26 +83,35 @@ public class TimedContainerInteractable : ContainerInteractable
             if (timer <= 0f)
             {
                 isTiming = false;
-                Debug.Log("Timer finished!");
                 cook();
+                Debug.Log("The food is ready!");
+                
             }
         }
     }
 
-    //When the timer = 0, Instantiates the item of the recipe, and destroys the stored item.
+    //When the timer = 0 in Update(), Instantiates the item of the recipe, and destroys the stored item.
     void cook(){
         if(storedItem != null){
             int inputRecipeList = findInputItemInRecipeList(storedItem.GetComponent<GrabInteractable>().itemType);
 
+            //Instantiating the cookedMeal, and destroying the ingredient's GameObject
             GameObject cookedMeal = Instantiate(recipeList[inputRecipeList].outputGameObject, storedItem.position, storedItem.rotation);
-            Destroy(storedItem.GetComponent<GameObject>());
+            Destroy(storedItem.gameObject);
             storedItem = cookedMeal.transform;
 
+
+            //Disabling the physics and object rotation of the cookedMeal
+            storedItem.transform.position = new Vector3(transform.position.x, transform.GetComponent<MeshRenderer>().bounds.max.y + storedItem.GetComponent<MeshRenderer>().bounds.extents.y, transform.position.z);
+            storedItem.transform.SetParent(transform, true);
+            storedItem.GetComponent<Rigidbody>().isKinematic = true;
+            storedItem.GetComponent<Collider>().isTrigger = true;
             
         }
 
     }
 
+    //Finds the input of a recipe in the recipe list based on the inputFoodItem
     int findInputItemInRecipeList(ItemType i){
 
         int count = 0;
@@ -103,51 +127,5 @@ public class TimedContainerInteractable : ContainerInteractable
         return -1;
     }
     
-
-   /* This is another solution that I was trying to use for the timers, it is not completed
-   
-   int findInputItemInRecipeList(ItemType i){
-
-        int count = 0;
-        foreach (Recipe recipe in recipeList)
-        {
-            if (recipe.inputFoodItem == i)
-            {
-                return count;
-            }
-
-            count++;
-        }
-        return -1;
-    }
-
-    void cook(Transform ingredient, int inputInRecipeList){
-        
-       
-        StartMyTimer();
-
-        Debug.Log("Cooked");
-        
-    }
-
-
-
-    public void StartMyTimer()
-    {
-        StartCoroutine(MyTimerCoroutine(5f)); // Start a 5-second timer
-
-        Debug.Log("Testing");
-    }
-
-    private IEnumerator MyTimerCoroutine(float duration)
-    {
-        Debug.Log("Timer started");
-        yield return new WaitForSeconds(duration);
-        Debug.Log("Timer finished!");
-        // Do something here, like activate a GameObject:
-        // myObject.SetActive(true);
-    }
-
-    */
 
 }
