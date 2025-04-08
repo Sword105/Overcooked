@@ -20,10 +20,11 @@ public class SpoilTimer : MonoBehaviour
     }
 
 
-
     rats listen in on the signal of spoiled food */
-
-    [Header("Food is Touching Ground")]
+    
+    
+    public event Action OnSummonedRat;
+    
     [Tooltip("bool for food touching the ground")]
     public bool OnGround = false;
     [Tooltip("kinda only matters if the ground is ever not flat but here just in case")]
@@ -33,21 +34,60 @@ public class SpoilTimer : MonoBehaviour
     [Tooltip("layer for checking the ground")]
     public LayerMask GroundLayers;
 
-    private bool TimerOff = true; //used so that multiple timers don't happen
+    [Tooltip("time it takes for a rat to spawn")]
+    [SerializeField] private float RatTimerMax = 5f;
+    private float CurrentRatTimer = 5f;
+
+    private bool TimerOn = false; //used so that multiple timers don't happen
+    private bool TimerEnded = false;
+
+
     
     private void MainProcess()
     {
-       if (OnGround && TimerOff)
+       if (OnGround && !TimerOn)
        {
-           //activate timer
-           TimerOff = false;
-       } 
+           TimerOn = true; //tries to only do one timer, potential bug: mutliple timers
+           CurrentRatTimer = RatTimerMax; //resets the timer to the given max
+       }
+
+       if (TimerOn)
+       {
+           RatTimer();
+       }
+       
+       if (TimerEnded)
+       {
+           SummonRat();
+       }
     }
 
     private void Update()
     {
         GroundedCheck();
         MainProcess();
+    }
+
+    private void RatTimer()
+    {
+        if (OnGround) //personal item timer only ticks down when still on the ground, preserves the timer and pauses it otherwise
+        {
+            CurrentRatTimer -= Time.deltaTime; //timer ticking down
+        }
+        
+        if (CurrentRatTimer <= 0) //end condition, duhh
+        {
+            TimerEnded = true;
+            TimerOn = false;
+            CurrentRatTimer = 0;
+        }
+    }
+
+    private void SummonRat()
+    {
+        Debug.Log("Spoiled food timed out: Summon rat called"); 
+        OnSummonedRat?.Invoke();
+        TimerEnded = false;
     }
 
     private void GroundedCheck()
