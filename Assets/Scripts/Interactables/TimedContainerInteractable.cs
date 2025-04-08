@@ -17,7 +17,6 @@ public class TimedContainerInteractable : ContainerInteractable
         if (heldItem != null)
         {
 
-            
             //If there is not a stored item and you are holding something, place it down on the table
             if (storedItem == null && findInputItemInRecipeList(heldItem.GetComponent<GrabInteractable>().itemType) != -1)
             {
@@ -39,12 +38,8 @@ public class TimedContainerInteractable : ContainerInteractable
         else
         {
             //If there is a stored item, and you aren't holding anything grab it
-            storedItem.tag = "Grabbable";
             if (storedItem != null && foodReady == true && isTiming == false)
             {
-                //We change the tag in this moment to Grabbable to prevent bugs that could have happened while cooking
-                
-                storedItem.GetComponent<GrabInteractable>().Interact(player, heldItem);
                 base.Interact(player, heldItem);
                 foodReady = false;
                 
@@ -97,7 +92,7 @@ public class TimedContainerInteractable : ContainerInteractable
 
             GameObject itemToEliminate = storedItem.gameObject;
             storedItem = cookedMeal.transform;
-            storedItem.tag = "Untagged";
+            //storedItem.tag = "Untagged";
             Destroy(itemToEliminate);
             
 

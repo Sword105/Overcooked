@@ -37,10 +37,16 @@ public class GrabInteractable : Interactable
 
     public override void Interact(GameObject player, Transform heldItem)
     {
+        
 
         
         if (heldItem == null && transform.CompareTag("Grabbable"))
         {
+            //Failsafe for a lot of bugs in TimedContainers
+            if(transform.GetComponentInParent<TimedContainerInteractable>() != null){
+                transform.GetComponentInParent<TimedContainerInteractable>().Interact(player,null);
+            }
+
             //If the player is holding nothing, reset the object's rotation, place it in front of the player, and disable its physics
             transform.rotation = Quaternion.identity;
             transform.position = player.transform.position + player.transform.forward * 1.2f;
