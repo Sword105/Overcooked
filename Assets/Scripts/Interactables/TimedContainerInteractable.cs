@@ -8,8 +8,8 @@ public class TimedContainerInteractable : ContainerInteractable
     //public List<Recipe> recipeList;
     public float timerDuration = 5f; // total time in seconds
     private float timer;
-    public bool isTiming = false;
-    public bool foodReady = false;
+    private bool isTiming = false;
+    private bool foodReady = false;
 
 
     public override void Interact(GameObject player, Transform heldItem)
