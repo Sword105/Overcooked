@@ -8,7 +8,8 @@ public class TimedContainerInteractable : ContainerInteractable
     //public List<Recipe> recipeList;
     public float timerDuration = 5f; // total time in seconds
     private float timer;
-    private bool isTiming = false;
+    public bool isTiming = false;
+    public bool foodReady = false;
 
 
     public override void Interact(GameObject player, Transform heldItem)
@@ -24,32 +25,31 @@ public class TimedContainerInteractable : ContainerInteractable
                 heldItem.transform.SetParent(transform, true);
                 base.Interact(player, heldItem);
 
-
                 StartTimer();
             }
-
-            else if(storedItem != null){
-                
-                if (storedItem.GetComponent<GrabInteractable>().itemType == ItemType.PLATE)
-                {
-                    storedItem.GetComponent<GrabInteractable>().Interact(player, heldItem);
-                }
-            }
-
             else //storedItem = null
             {
                 Debug.Log("Not in recipeList");
             }
         }
+        else if(foodReady == false)
+        {
+            Debug.Log("Not possible to grab an item while cooking");
+        }
         else
         {
             //If there is a stored item, and you aren't holding anything grab it
-            if (storedItem != null)
+            storedItem.tag = "Grabbable";
+            if (storedItem != null && foodReady == true && isTiming == false)
             {
+                //We change the tag in this moment to Grabbable to prevent bugs that could have happened while cooking
+                
                 storedItem.GetComponent<GrabInteractable>().Interact(player, heldItem);
+                base.Interact(player, heldItem);
+                foodReady = false;
+                
             }
-            base.Interact(player, heldItem);
-
+                
         
         }
 
@@ -57,14 +57,12 @@ public class TimedContainerInteractable : ContainerInteractable
         //This updates the heldItem and storedItem variables in memory
     }
 
-
     
     //Starts the timer in Update()
     public void StartTimer()
     {
         timer = timerDuration;
         isTiming = true;
-
         Debug.Log("The food began to cook");
     }
 
@@ -82,23 +80,26 @@ public class TimedContainerInteractable : ContainerInteractable
 
             if (timer <= 0f)
             {
-                isTiming = false;
-                cook();
-                Debug.Log("The food is ready!");
-                
+                cook(); 
             }
         }
     }
 
     //When the timer = 0 in Update(), Instantiates the item of the recipe, and destroys the stored item.
     void cook(){
-        if(storedItem != null){
-            int inputRecipeList = findInputItemInRecipeList(storedItem.GetComponent<GrabInteractable>().itemType);
+        
+        int inputRecipeList = findInputItemInRecipeList(storedItem.GetComponent<GrabInteractable>().itemType);
+       
+        if(storedItem != null && inputRecipeList != -1){
 
             //Instantiating the cookedMeal, and destroying the ingredient's GameObject
             GameObject cookedMeal = Instantiate(recipeList[inputRecipeList].outputGameObject, storedItem.position, storedItem.rotation);
-            Destroy(storedItem.gameObject);
+
+            GameObject itemToEliminate = storedItem.gameObject;
             storedItem = cookedMeal.transform;
+            storedItem.tag = "Untagged";
+            Destroy(itemToEliminate);
+            
 
 
             //Disabling the physics and object rotation of the cookedMeal
@@ -107,8 +108,10 @@ public class TimedContainerInteractable : ContainerInteractable
             storedItem.GetComponent<Rigidbody>().isKinematic = true;
             storedItem.GetComponent<Collider>().isTrigger = true;
             
+            foodReady = true;
+            isTiming = false;
+            Debug.Log("The food is ready!");
         }
-
     }
 
     //Finds the input of a recipe in the recipe list based on the inputFoodItem
@@ -125,6 +128,12 @@ public class TimedContainerInteractable : ContainerInteractable
             count++;
         }
         return -1;
+    }
+
+    //This is used in GrabInteractable, so we can get the this info to set the tag to "Grabbable" or "Untagged"
+    public bool getFoodReady()
+    {
+        return foodReady;
     }
     
 
