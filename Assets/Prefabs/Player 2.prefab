@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2046602924308935065}
-  speed: 10
+  speed: 15
   dashing: 1
   dashCounter: 5
 --- !u!114 &-5188411705930700770
@@ -214,6 +214,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 4239e6d3-92df-475c-ad67-eea435383383
     m_ActionName: player/Interact[/Keyboard/e,/DualSenseGamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cd3e2f35-b3f4-4d76-a7d3-b4aebf81fe9a
+    m_ActionName: player/Dash[/Keyboard/space,/DualSenseGamepadHID/buttonEast]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Controller
   m_DefaultActionMap: player

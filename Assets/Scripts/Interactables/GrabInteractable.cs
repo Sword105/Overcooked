@@ -19,6 +19,16 @@ public class GrabInteractable : Interactable
         {
             transform.tag = "Untagged";
         }
+
+        //Checks if the player can grab an item in a TimedContainer depending if it is already cooked or not
+        else if(transform.GetComponentInParent<TimedContainerInteractable>() != null) 
+        {
+            if(transform.GetComponentInParent<TimedContainerInteractable>().getFoodReady() == false)
+            {
+                transform.tag = "Untagged";
+            }
+        }
+        
         else
         {
             transform.tag = "Grabbable";
@@ -27,8 +37,16 @@ public class GrabInteractable : Interactable
 
     public override void Interact(GameObject player, Transform heldItem)
     {
+        
+
+        
         if (heldItem == null && transform.CompareTag("Grabbable"))
         {
+            //Failsafe for a lot of bugs in TimedContainers
+            if(transform.GetComponentInParent<TimedContainerInteractable>() != null){
+                transform.GetComponentInParent<TimedContainerInteractable>().Interact(player,null);
+            }
+
             //If the player is holding nothing, reset the object's rotation, place it in front of the player, and disable its physics
             transform.rotation = Quaternion.identity;
             transform.position = player.transform.position + player.transform.forward * 1.2f;
