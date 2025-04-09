@@ -1,43 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour
 {
-    private string scene;
+    public PlayerConfigManager setupManager;
+    public GameObject firstSelection;
+
+    private void OnEnable()
+    {
+        EventSystem.current.SetSelectedGameObject(firstSelection);
+    }
+
     public void selectJurassicLevel()
     {
-        scene = "StoneAge";
+        setupManager.sceneToLoad = "InteractableTest";
         //SceneManager.LoadScene(scene);
     }
     public void selectMedievalLevel()
     {
-        scene = "MedievalAge";
+        setupManager.sceneToLoad = "MedievalAge";
         //SceneManager.LoadScene(2);
     }
 
     public void selectModernLevel()
     {
-        scene = "ModernAge";
+        setupManager.sceneToLoad = "ModernAge";
         //SceneManager.LoadScene(3);
     }
 
     public void selectGreenLibraryLevel()
     {
-        scene = "GreenLibrary";
+        setupManager.sceneToLoad = "GreenLibrary";
         //SceneManager.LoadScene(4);
     }
 
     public void selectFutureLevel()
     {
-        scene = "FutureAge";
+        setupManager.sceneToLoad = "FutureAge";
         //SceneManager.LoadScene(5);
     }
 
     public void selectBossLevel()
     {
-        scene = "BossLevel";
+        setupManager.sceneToLoad = "BossLevel";
         //SceneManager.LoadScene(6);
     }
 }
