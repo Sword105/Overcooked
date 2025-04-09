@@ -5,32 +5,39 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour
 {
+    private string scene;
     public void selectJurassicLevel()
     {
-        SceneManager.LoadScene(1);
+        scene = "StoneAge";
+        //SceneManager.LoadScene(scene);
     }
     public void selectMedievalLevel()
     {
-        SceneManager.LoadScene(2);
+        scene = "MedievalAge";
+        //SceneManager.LoadScene(2);
     }
 
     public void selectModernLevel()
     {
-        SceneManager.LoadScene(3);
+        scene = "ModernAge";
+        //SceneManager.LoadScene(3);
     }
 
     public void selectGreenLibraryLevel()
     {
-        SceneManager.LoadScene(4);
+        scene = "GreenLibrary";
+        //SceneManager.LoadScene(4);
     }
 
     public void selectFutureLevel()
     {
-        SceneManager.LoadScene(5);
+        scene = "FutureAge";
+        //SceneManager.LoadScene(5);
     }
 
     public void selectBossLevel()
     {
-        SceneManager.LoadScene(6);
+        scene = "BossLevel";
+        //SceneManager.LoadScene(6);
     }
 }
