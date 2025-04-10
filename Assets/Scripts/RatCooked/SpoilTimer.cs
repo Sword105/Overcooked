@@ -60,6 +60,15 @@ public class SpoilTimer : MonoBehaviour
        }
     }
 
+    private void Awake()
+    {
+        GrabInteractable interactable = GetComponent<GrabInteractable>();
+        if (interactable != null && interactable.itemType < ItemType.TOMATO) //if the interactable is assigned and the item type is less than tomato (the first "edible" item type)
+        {
+            this.enabled = false; //disables the script, because its not an edible object
+        }
+    }
+
     private void Update()
     {
         GroundedCheck();
