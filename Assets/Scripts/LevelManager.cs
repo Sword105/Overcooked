@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using UnityEngine.Timeline;
+using TMPro;
 
 [System.Serializable]
 public struct Order
@@ -49,12 +51,17 @@ public class LevelManager : MonoBehaviour
         TimeTick();
     }
 
+    public TextMeshProUGUI text;
     void TimeTick()
     {
         if (!timeEnded)
         {            
             currentTimeLeft -= Time.deltaTime;
-            //Debug.Log(currentTimeLeft + " seconds left");
+            int seconds = ((int)currentTimeLeft % 60);
+            int minutes = ((int)currentTimeLeft / 60);
+            string formattedTime = string.Format("{0:00}:{1:00}", minutes, seconds);
+            text.text = formattedTime + " left";
+
 
             if (currentTimeLeft <= 0)
             {

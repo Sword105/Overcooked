@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/StartMenu.unity
+    guid: f3166dc661249944a86f3827ee4e252f
+  - enabled: 1
+    path: Assets/Scenes/SampleLevels/StoneAge.unity
+    guid: 1863be2837b06f44390c407e0b1f666a
+  - enabled: 1
+    path: Assets/Scenes/SampleLevels/MedievalAge.unity
+    guid: c301c65cf51f8b14b82b3531c412124b
+  - enabled: 1
+    path: Assets/Scenes/SampleLevels/ModernAge.unity
+    guid: 2d11466cdf16af1478d8739e6483d7e7
+  - enabled: 1
+    path: Assets/Scenes/SampleLevels/GreenLibrary.unity
+    guid: e16023a7aaf1e534f8b168464fd0fdcf
+  - enabled: 1
+    path: Assets/Scenes/SampleLevels/FutureAge.unity
+    guid: 9a64e39e3776cae42a9151d7ee90412d
+  - enabled: 1
+    path: Assets/Scenes/SampleLevels/BossLevel.unity
+    guid: 0d2bb21a35db8954cb05a97fd3fa17e6
   m_configObjects: {}
