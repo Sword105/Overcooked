@@ -49,14 +49,12 @@ public class SpoilTimer : MonoBehaviour
        {
            TimerOn = true; //tries to only do one timer, potential bug: mutliple timers
            CurrentRatTimer = RatTimerMax; //resets the timer to the given max
-       }
-
-       if (TimerOn)
+       } 
+       else if (TimerOn)
        {
            RatTimer();
        }
-       
-       if (TimerEnded)
+       else if (TimerEnded)
        {
            SummonRat();
        }
