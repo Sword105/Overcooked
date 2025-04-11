@@ -54,7 +54,7 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI text;
     void TimeTick()
     {
-        if (!timeEnded)
+        if (!timeEnded && text != null)
         {            
             currentTimeLeft -= Time.deltaTime;
             int seconds = ((int)currentTimeLeft % 60);

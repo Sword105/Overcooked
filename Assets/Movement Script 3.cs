@@ -4,13 +4,9 @@ using System.Collections;
 
 public class MovementScript3 : MonoBehaviour
 {
-    
     public Rigidbody player;
     public float speed = 10f;
-    float weirdFloat;
-
-    
-    
+    float weirdFloat;    
 
     [Header("Dashing")]
     public bool dashing = false;
@@ -24,12 +20,10 @@ public class MovementScript3 : MonoBehaviour
     private bool isOnCoolDown = false;
     private float coolDownDashing = 0.75f;
 
-   
-
     private Vector3 movementInput;
     private bool dashed = false;
-    
 
+    public LayerMask raycastIgnoreLayer;
 
     public void OnMove(InputAction.CallbackContext context) {
         if (!dashing)
@@ -68,8 +62,9 @@ public class MovementScript3 : MonoBehaviour
    
     void FixedUpdate() {
 
-        if (!Physics.Raycast(transform.position, transform.forward, 0.8f))
+        if (!Physics.Raycast(transform.position, transform.forward, 0.8f, raycastIgnoreLayer))
         {
+            Debug.Log("able to move");
             player.MovePosition((Vector3)transform.position + movementInput * speed * Time.deltaTime); // movementposition used for movement, vector3 for 3d
         }
         

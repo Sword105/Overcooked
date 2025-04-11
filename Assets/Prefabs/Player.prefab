@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4092723332301130405}
   - component: {fileID: 3942204540800231609}
   - component: {fileID: 7672549125795414888}
+  - component: {fileID: -7968024781528686868}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -153,6 +154,9 @@ MonoBehaviour:
   speed: 10
   dashing: 0
   dashCounter: 15
+  raycastIgnoreLayer:
+    serializedVersion: 2
+    m_Bits: 51
 --- !u!114 &3942204540800231609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +251,21 @@ MonoBehaviour:
   m_DefaultActionMap: player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &-7968024781528686868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461031802003329819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c1d02a156fe4ef4a8357af640ed82cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerModel: {fileID: 0}
+  movementScript: {fileID: 4092723332301130405}
+  interactionScript: {fileID: 3942204540800231609}
 --- !u!1 &3918920996029824938
 GameObject:
   m_ObjectHideFlags: 0
