@@ -1,27 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
-public class Ratattouille : MonoBehaviour
+public class Ratattouille : MonoBehaviour //RATMANAGER
 {
+    public static Ratattouille Instance { get; private set; } //instance accessible anywhere
+    
+    [SerializeField] private GameObject RatPrefab;
+    [SerializeField] private List<Transform> RatSpawnLocations;
     
     private List<SpoilTimer> timers = new List<SpoilTimer>(); //creates a reference to a list of all spoil timer objects in the scene
 
-    private void Start()
+    private void Awake()
     {
-        SpoilTimer[] spoilTimers = FindObjectOfType<SpoilTimer>();
-        
-        foreach ()
-        
-        
+        Instance = this;
+    }
+    
+    private void Start() //Only here as a failsafe if food is prespawned in the scene
+    {
+        foreach (SpoilTimer timer in FindObjectsOfType<SpoilTimer>()) //finds all objects with spoiltimer
+        {
+            RegisterSpoilTimer(timer); //and registers them to the list
+        }
+    }
+    
+    public void RegisterSpoilTimer(SpoilTimer ratTimer) //must be public
+    {
+        ratTimer.OnSummonedRat += () => SpawnRat(); //listener for the rat summon event by the timer
     }
     
     private void SpawnRat()
     {
-        public GameObject RatPrefab;
+        Transform chosenLocation = FindLocation(); 
+        
+        Instantiate(RatPrefab, chosenLocation.position, Quaternion.identity);
+        Debug.Log("Rat spawned at: " + chosenLocation.position);
+
+    }
+
+    private Transform FindLocation() //essentially picks a random location from the list of existing spawn points for variety
+    {
+        return RatSpawnLocations[Random.Range(0, RatSpawnLocations.Count)];
     }
 
 }
+
 
 
 /*

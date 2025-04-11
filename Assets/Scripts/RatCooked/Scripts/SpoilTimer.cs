@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SpoilTimer : MonoBehaviour
 {
@@ -45,27 +46,36 @@ public class SpoilTimer : MonoBehaviour
     
     private void MainProcess()
     {
-       if (OnGround && !TimerOn)
+        if (TimerEnded) //checks the victory condition first 
+        {
+            SummonRat();
+        }
+       else if (OnGround && !TimerOn) //...then actually starts the timer
        {
            TimerOn = true; //tries to only do one timer, potential bug: mutliple timers
            CurrentRatTimer = RatTimerMax; //resets the timer to the given max
        } 
-       else if (TimerOn)
-       {
-           RatTimer();
-       }
-       else if (TimerEnded)
-       {
-           SummonRat();
-       }
+       else if (TimerOn) 
+        {
+            RatTimer();
+        }
     }
 
-    private void Awake()
+    private void Awake() 
     {
+        //NOTE: THIS ISNT DECOUPLED, RELIES ON ORDERING FROM ITEMTYPE.CS
         GrabInteractable interactable = GetComponent<GrabInteractable>();
         if (interactable != null && interactable.itemType < ItemType.TOMATO) //if the interactable is assigned and the item type is less than tomato (the first "edible" item type)
         {
             this.enabled = false; //disables the script, because its not an edible object
+        }
+    }
+
+    private void Start() //prolly could've put this in awake but wanted to avoid errors if food is prespawned in a scene
+    {
+        if (Ratattouille.Instance != null)
+        {
+            Ratattouille.Instance.RegisterSpoilTimer(this); //registers this instance into the list in the manager
         }
     }
 
@@ -77,6 +87,7 @@ public class SpoilTimer : MonoBehaviour
 
     private void RatTimer()
     {
+        
         if (OnGround) //personal item timer only ticks down when still on the ground, preserves the timer and pauses it otherwise
         {
             CurrentRatTimer -= Time.deltaTime; //timer ticking down
