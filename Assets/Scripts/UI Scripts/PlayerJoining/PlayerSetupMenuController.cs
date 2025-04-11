@@ -13,11 +13,6 @@ public class PlayerSetupMenuController : MonoBehaviour
     public GameObject readyPanel;
     public Button readyButton;
 
-    public void Start()
-    {
-        MultiplayerEventSystem.current.SetSelectedGameObject(readyButton.gameObject);
-    }
-
     public void SetPlayerIndex(int pi)
     {
         playerIndex = pi;
@@ -37,11 +32,5 @@ public class PlayerSetupMenuController : MonoBehaviour
         {
             titleText.text = "Cancel";
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
