@@ -801,7 +801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55cbb0e6bf1840644ae3b0dcd75885b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ratSpawner: {fileID: 0}
   maxTimeInSeconds: 300
   timeForPlateRespawn: 10
   customerSpawnRate: 20
@@ -1166,7 +1165,7 @@ PrefabInstance:
     - target: {fileID: 4938429720587793762, guid: b47b559e72918d140901353f03663d81,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.6
+      value: 1.34
       objectReference: {fileID: 0}
     - target: {fileID: 4938429720587793762, guid: b47b559e72918d140901353f03663d81,
         type: 3}
@@ -1176,7 +1175,7 @@ PrefabInstance:
     - target: {fileID: 4938429720587793762, guid: b47b559e72918d140901353f03663d81,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.5600002
+      value: -1.9
       objectReference: {fileID: 0}
     - target: {fileID: 4938429720587793762, guid: b47b559e72918d140901353f03663d81,
         type: 3}

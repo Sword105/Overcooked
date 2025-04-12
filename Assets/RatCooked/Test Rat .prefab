@@ -263,6 +263,8 @@ MonoBehaviour:
   agent: {fileID: 0}
   target: {fileID: 0}
   state: 0
+  distanceThreshold: 2.9
+  isMoving: 0
 --- !u!195 &6231730751090464167
 NavMeshAgent:
   m_ObjectHideFlags: 0
