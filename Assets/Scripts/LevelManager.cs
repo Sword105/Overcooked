@@ -16,8 +16,6 @@ public struct Order
 
 public class LevelManager : MonoBehaviour
 {
-
-    [SerializeField] private SpoilTimer ratSpawner; //reference to spoil timer for later event subscribing
     
     
     public float maxTimeInSeconds = 300f;
