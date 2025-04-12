@@ -24,7 +24,7 @@ public class SpoilTimer : MonoBehaviour
     rats listen in on the signal of spoiled food */
     
     
-    public event Action OnSummonedRat;
+    public event Action<Transform> OnSummonedRat;
     
     [Tooltip("bool for food touching the ground")]
     public bool OnGround = false;
@@ -55,7 +55,7 @@ public class SpoilTimer : MonoBehaviour
            TimerOn = true; //tries to only do one timer, potential bug: mutliple timers
            CurrentRatTimer = RatTimerMax; //resets the timer to the given max
        } 
-       else if (TimerOn) 
+       else if (TimerOn && !TimerEnded) 
         {
             RatTimer();
         }
@@ -103,9 +103,10 @@ public class SpoilTimer : MonoBehaviour
 
     private void SummonRat()
     {
-        Debug.Log("Spoiled food timed out: Summon rat called"); 
-        OnSummonedRat?.Invoke();
         TimerEnded = false;
+        Debug.Log("Spoiled food timed out: Summon rat called"); 
+        OnSummonedRat?.Invoke(this.transform);
+        this.enabled = false; //disables the script afterwards for no duplicate rats
     }
 
     private void GroundedCheck()

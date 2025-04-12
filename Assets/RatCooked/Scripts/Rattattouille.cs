@@ -16,26 +16,25 @@ public class Ratattouille : MonoBehaviour //RATMANAGER
     {
         Instance = this;
     }
-    
-    private void Start() //Only here as a failsafe if food is prespawned in the scene
-    {
-        foreach (SpoilTimer timer in FindObjectsOfType<SpoilTimer>()) //finds all objects with spoiltimer
-        {
-            RegisterSpoilTimer(timer); //and registers them to the list
-        }
-    }
-    
     public void RegisterSpoilTimer(SpoilTimer ratTimer) //must be public
     {
-        ratTimer.OnSummonedRat += () => SpawnRat(); //listener for the rat summon event by the timer
+        ratTimer.OnSummonedRat += (Transform target) => SpawnRat(target); //listener for the rat summon event by the timer
     }
     
-    private void SpawnRat()
+    private void SpawnRat(Transform target)
     {
         Transform chosenLocation = FindLocation(); 
         
-        Instantiate(RatPrefab, chosenLocation.position, Quaternion.identity);
-        Debug.Log("Rat spawned at: " + chosenLocation.position);
+        GameObject rat = Instantiate(RatPrefab, chosenLocation.position, Quaternion.identity);
+        RatLogic ai = rat.GetComponent<RatLogic>();
+        
+        if (ai != null)
+        {
+            Debug.Log("rat given directions");
+            ai.SetTarget(target); //basically just sets its first destination to the food that spawned it
+        }
+        
+        Debug.Log("Rat spawned at: " + chosenLocation.position + ", heading to " + target.position);
 
     }
 
@@ -56,6 +55,17 @@ event ratpocalypse
 
 
 //------------------------CODE AND IDEAS GRAVEYARD----------------------------
+
+
+
+/*private void Start() //Only here as a failsafe if food is prespawned in the scene
+    {
+        foreach (SpoilTimer timer in FindObjectsOfType<SpoilTimer>()) //finds all objects with spoiltimer
+        {
+            RegisterSpoilTimer(timer); //and registers them to the list
+        }
+    }*/
+
 
 
 //IDEA: if (spoiled food signal invoked)
