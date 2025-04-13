@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -24,6 +25,7 @@ public class RatLogic : MonoBehaviour
     [SerializeField] bool isMoving = false;
     [SerializeField] float eatingTimerMax = 4f;
      private float currentEatingTimer = 4f;
+     private bool TimerEnded = false;
 
     private void Awake()
     {
@@ -58,42 +60,55 @@ public class RatLogic : MonoBehaviour
         switch (state)
         {
             case RatState.ACTIVE:
-                if (isMoving)
+                if (agent.velocity.sqrMagnitude > 0.1f) //isMoving
                 {
-                    RatState state = RatState.SCURRY;
+                    state = RatState.SCURRY;
                 }
                 break;
             case RatState.SCURRY:
-                Debug.Log(transform.position + " " + target.position);
-                if (Vector3.Distance(transform.position, target.position) <= distanceThreshold) //when reaching target...
-                {
-                    Debug.Log("Rat at " + target.position + ", switching to eating");
-                    SetTarget(transform);
-                    state = RatState.EATING;
-                }
+                StateScurry();
                 break;
             case RatState.EATING:
-                if (OnGround) //personal item timer only ticks down when still on the ground, preserves the timer and pauses it otherwise
-                {
-                    currentEatingTimer -= Time.deltaTime; //timer ticking down
-                }
-        
-                if (currentEatingTimer <= 0) //end condition, duhh
-                {
-                    TimerEnded = true;
-                    currentEatingTimer = 0;
-                    //delete food prefab
-                    state = RatState.ESCAPING;
-                }
+                StateEating();
                 break;
             case RatState.GRABBED:
                 break;
             case RatState.PUSHING:
+                //spawns on a counter
+                //pushes pots and pans off 
                 break;
             case RatState.ESCAPING:
                 //sets target lcoation to the spawn points used as escape points, follows same system
                 //If reached escape point, invoke rat escaped event (prolly used for ratpocalypse and pushing)
                 break;
+        }
+    }
+
+    private void StateScurry()
+    {
+        Debug.Log(transform.position + " " + target.position);
+        if (Vector3.Distance(transform.position, target.position) <= distanceThreshold) //when reaching target...
+        {
+            Debug.Log("Rat at " + target.position + ", switching to eating");
+            SetTarget(transform);
+            state = RatState.EATING;
+        }
+    }
+
+    private void StateEating()
+    {
+        if ((Vector3.Distance(transform.position, target.position) <= distanceThreshold) && !TimerEnded) //personal item timer only ticks down when the rat and item are still close by, preserves the timer and pauses it otherwise
+        {
+            currentEatingTimer -= Time.deltaTime; //timer ticking down
+        }
+
+        if (currentEatingTimer <= 0) //end condition, duhh
+        {
+            Debug.Log("eating over, switching to escaping");
+            TimerEnded = true;
+            currentEatingTimer = 0;
+            //delete food prefab
+            state = RatState.ESCAPING;
         }
     }
 }
