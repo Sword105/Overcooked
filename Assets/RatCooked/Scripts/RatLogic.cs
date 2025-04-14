@@ -30,6 +30,7 @@ public class RatLogic : MonoBehaviour
     private float currentEatingTimer = 4f;
     private bool timerEnded = false; 
     private bool isEscaping = false;
+    private bool escapeStarted = false;
     
     private void Awake()
     {
@@ -92,17 +93,23 @@ public class RatLogic : MonoBehaviour
                 //pushes pots and pans off 
                 break;
             case RatState.ESCAPING:
-                
-                agent.SetDestination(ratManager.PassEscapeLocation());
+
+                if (!escapeStarted)
+                {
+                    agent.SetDestination(ratManager.PassEscapeLocation());
+                    escapeStarted = true;
+                    Debug.Log("hehe");
+                    break; //end the case early to stop bugs
+                }
                 
 
                 if (CompareSelfVSTarget())
                 {
+                    Debug.Log("rat at target, blowing the fuck up");
                     OnRatEscaped?.Invoke(); //If reached escape point, invoke rat escaped event (prolly used for ratpocalypse and pushing, rat escape counter?) POSSIBLE bug goes off multiple times cause of frames
                     agent.isStopped = true;
                     Destroy(gameObject); //RAT DESTROYED!!!!
                 }
-                
                 break;
         }
     }
@@ -138,6 +145,7 @@ public class RatLogic : MonoBehaviour
 
     private bool CompareSelfVSTarget() //compare distance between rat and target location
     {
+        Debug.Log("comparing self");
         return Vector3.Distance(transform.position, target.position) <= distanceThreshold;
     }
 
