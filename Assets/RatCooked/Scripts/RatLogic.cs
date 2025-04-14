@@ -7,6 +7,8 @@ using UnityEngine.AI;
 
 public class RatLogic : MonoBehaviour
 {
+    public event Action OnRatEscaped;
+    
     enum RatState
     {
         //PASSIVE = 0 /*(waiting to be activated off screen, does nothing)*/,
@@ -21,14 +23,14 @@ public class RatLogic : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Transform target;
     [SerializeField] RatState state = RatState.ACTIVE;
-    [SerializeField] float distanceThreshold = 0.5f;
+    [SerializeField] float distanceThreshold = 0.8f;
     [SerializeField] bool isMoving = false;
     [SerializeField] float eatingTimerMax = 4f;
-    [SerializeField] private Transform[] escapePoints; 
+    [SerializeField] private Ratattouille ratManager;
+    private float currentEatingTimer = 4f;
+    private bool timerEnded = false; 
     private bool isEscaping = false;
-     private float currentEatingTimer = 4f;
-     private bool TimerEnded = false;
-
+    
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -39,11 +41,9 @@ public class RatLogic : MonoBehaviour
     {
         currentEatingTimer = eatingTimerMax;
         
-        GameObject[] escapeObjects = GameObject.FindGameObjectsWithTag("RatEscape");
-        escapePoints = new Transform[escapeObjects.Length];
-        for (int i = 0; i < escapeObjects.Length; i++)
+        if (ratManager == null)
         {
-            escapePoints[i] = escapeObjects[i].transform;
+            ratManager = Ratattouille.Instance;
         }
     }
 
@@ -92,8 +92,17 @@ public class RatLogic : MonoBehaviour
                 //pushes pots and pans off 
                 break;
             case RatState.ESCAPING:
-                //sets target lcoation to the spawn points used as escape points, follows same system
-                //If reached escape point, invoke rat escaped event (prolly used for ratpocalypse and pushing)
+                
+                agent.SetDestination(ratManager.PassEscapeLocation());
+                
+
+                if (CompareSelfVSTarget())
+                {
+                    OnRatEscaped?.Invoke(); //If reached escape point, invoke rat escaped event (prolly used for ratpocalypse and pushing, rat escape counter?) POSSIBLE bug goes off multiple times cause of frames
+                    agent.isStopped = true;
+                    Destroy(gameObject); //RAT DESTROYED!!!!
+                }
+                
                 break;
         }
     }
@@ -101,7 +110,7 @@ public class RatLogic : MonoBehaviour
     private void StateScurry()
     {
         Debug.Log(transform.position + " " + target.position);//CURRENT BUG, USES OLD TARGETS POSITION FOR GUIDE, COMPARES AGAINST CURRENT TARGET POSITION? I THINK?
-        if (Vector3.Distance(transform.position, target.position) <= distanceThreshold) //when reaching target... 
+        if (CompareSelfVSTarget()) //when reaching target... 
         {
             Debug.Log("Rat at " + target.position + ", switching to eating");
             SetTarget(transform);
@@ -112,7 +121,7 @@ public class RatLogic : MonoBehaviour
 
     private void StateEating()
     {
-        if ((Vector3.Distance(transform.position, target.position) <= distanceThreshold) && !TimerEnded) //personal item timer only ticks down when the rat and item are still close by, preserves the timer and pauses it otherwise
+        if (CompareSelfVSTarget() && !timerEnded) //personal item timer only ticks down when the rat and item are still close by, preserves the timer and pauses it otherwise
         {
             currentEatingTimer -= Time.deltaTime; //timer ticking down
         }
@@ -120,10 +129,16 @@ public class RatLogic : MonoBehaviour
         if (currentEatingTimer <= 0) //end condition, duhh
         {
             Debug.Log("eating over, switching to escaping");
-            TimerEnded = true;
+            timerEnded = true;
             currentEatingTimer = 0;
             //delete food prefab
             state = RatState.ESCAPING;
         }
     }
+
+    private bool CompareSelfVSTarget() //compare distance between rat and target location
+    {
+        return Vector3.Distance(transform.position, target.position) <= distanceThreshold;
+    }
+
 }

@@ -9,18 +9,25 @@ public class Ratattouille : MonoBehaviour //RATMANAGER
     
     [SerializeField] private GameObject RatPrefab;
     [SerializeField] private List<Transform> RatSpawnLocations;
+    [SerializeField] private List<Transform> RatEscapeLocations;
     
     private List<SpoilTimer> timers = new List<SpoilTimer>(); //creates a reference to a list of all spoil timer objects in the scene
 
-    private void Awake()
+    public Vector3 PassEscapeLocation() //kinda shitty code but tbh i cant think of an easy way to reference this to the rats
     {
-        Instance = this;
+        int escapeIndex = UnityEngine.Random.Range(0, RatEscapeLocations.Count);
+        Vector3 chosenLocation = RatEscapeLocations[escapeIndex].position;
+        return chosenLocation;
     }
     public void RegisterSpoilTimer(SpoilTimer ratTimer) //must be public
     {
         ratTimer.OnSummonedRat += (Transform target) => SpawnRat(target); //listener for the rat summon event by the timer
     }
     
+    private void Awake()
+        {
+            Instance = this;
+        }
     private void SpawnRat(Transform target)
     {
         Transform chosenLocation = FindLocation(); 
