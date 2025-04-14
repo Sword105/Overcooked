@@ -24,6 +24,8 @@ public class RatLogic : MonoBehaviour
     [SerializeField] float distanceThreshold = 0.5f;
     [SerializeField] bool isMoving = false;
     [SerializeField] float eatingTimerMax = 4f;
+    [SerializeField] private Transform[] escapePoints; 
+    private bool isEscaping = false;
      private float currentEatingTimer = 4f;
      private bool TimerEnded = false;
 
@@ -36,8 +38,20 @@ public class RatLogic : MonoBehaviour
     private void Start()
     {
         currentEatingTimer = eatingTimerMax;
+        
+        GameObject[] escapeObjects = GameObject.FindGameObjectsWithTag("RatEscape");
+        escapePoints = new Transform[escapeObjects.Length];
+        for (int i = 0; i < escapeObjects.Length; i++)
+        {
+            escapePoints[i] = escapeObjects[i].transform;
+        }
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, distanceThreshold);
+    }
     public void SetTarget(Transform newTarget) //how to change destination
     {
         target = newTarget;
@@ -45,7 +59,7 @@ public class RatLogic : MonoBehaviour
         {
             agent.SetDestination(target.position);
             Debug.Log("Rat heading to " + target.position);
-            Debug.Log(state);
+            Debug.Log("Set target: " + state);
         }
     }
 
@@ -86,12 +100,13 @@ public class RatLogic : MonoBehaviour
 
     private void StateScurry()
     {
-        Debug.Log(transform.position + " " + target.position);
-        if (Vector3.Distance(transform.position, target.position) <= distanceThreshold) //when reaching target...
+        Debug.Log(transform.position + " " + target.position);//CURRENT BUG, USES OLD TARGETS POSITION FOR GUIDE, COMPARES AGAINST CURRENT TARGET POSITION? I THINK?
+        if (Vector3.Distance(transform.position, target.position) <= distanceThreshold) //when reaching target... 
         {
             Debug.Log("Rat at " + target.position + ", switching to eating");
             SetTarget(transform);
             state = RatState.EATING;
+            Debug.Log(state);
         }
     }
 
