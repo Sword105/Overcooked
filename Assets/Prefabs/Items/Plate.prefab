@@ -146,9 +146,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactSound: {fileID: 0}
-  itemType: 3
+  itemType: 4
   foodStored: 
-  foodModel: {fileID: 0}
+  modelResources: []
+  currentModelResource: {fileID: 0}
 --- !u!65 &8968953238646751623
 BoxCollider:
   m_ObjectHideFlags: 0

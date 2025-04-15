@@ -10,6 +10,12 @@ public class PlateStation : ContainerInteractable
     void Start()
     {
         //This just sets storedItem to not be empty so that the interaction priority doesn't mess up
+
+        for (int i = 0; i < 6; i++)
+        {
+            AddPlate();
+        }
+
         storedItem = new GameObject().transform;
     }
 
