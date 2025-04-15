@@ -80,6 +80,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bdf4fb70908da0145bd5a50182b0895c,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bdf4fb70908da0145bd5a50182b0895c,
+        type: 3}
       propertyPath: m_TagString
       value: Grabbable
       objectReference: {fileID: 0}
@@ -148,7 +153,8 @@ MonoBehaviour:
   interactSound: {fileID: 0}
   itemType: 4
   foodStored: 
-  modelResources: []
+  modelResources:
+  - {fileID: -5658580269880237354, guid: 741fc39cd5648664e995ea10d0eb8553, type: 3}
   currentModelResource: {fileID: 0}
 --- !u!65 &8968953238646751623
 BoxCollider:
