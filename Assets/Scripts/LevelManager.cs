@@ -26,7 +26,8 @@ public class LevelManager : MonoBehaviour
     public GameObject customerPrefab;
 
     public List<Order> orders;
-    
+
+    public Transform customerEndPoint;
     public PlateStation plateStation;
     public OrderStation orderStation;
     public LevelMenu menu;
@@ -89,7 +90,7 @@ public class LevelManager : MonoBehaviour
                 newOrder.order = menu.RandomMenuItem();
                 newOrder.customer = Instantiate(customerPrefab, customerSpawnPoint);
 
-                newOrder.customer.GetComponent<NavMeshAgent>().SetDestination(plateStation.transform.position);
+                newOrder.customer.GetComponent<NavMeshAgent>().SetDestination(customerEndPoint.transform.position);
                 orders.Add(newOrder);
 
                 yield return new WaitForSeconds(2f);

@@ -1102,6 +1102,11 @@ PrefabInstance:
       objectReference: {fileID: 853405102}
     - target: {fileID: 5420328901047461493, guid: 8035d299e0f664f41884db37b7a5fa28,
         type: 3}
+      propertyPath: customerEndPoint
+      value: 
+      objectReference: {fileID: 800004118}
+    - target: {fileID: 5420328901047461493, guid: 8035d299e0f664f41884db37b7a5fa28,
+        type: 3}
       propertyPath: orders.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -6397,6 +6402,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 799136589}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &800004117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 800004118}
+  m_Layer: 0
+  m_Name: CustomerEndPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &800004118
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800004117}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0006681599, y: -0.999901, z: 0.003770752, w: 0.013538631}
+  m_LocalPosition: {x: 1014.519, y: 1, z: -19.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &823322046
 GameObject:
   m_ObjectHideFlags: 0
@@ -8591,7 +8627,7 @@ Transform:
   m_GameObject: {fileID: 1139513550}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1014.65, y: 1.077213, z: -24.66}
+  m_LocalPosition: {x: 1014.65, y: 1, z: -24.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16485,6 +16521,7 @@ SceneRoots:
   - {fileID: 107073090}
   - {fileID: 240576594}
   - {fileID: 1139513551}
+  - {fileID: 800004118}
   - {fileID: 950196529}
   - {fileID: 1119369134}
   - {fileID: 2141716257}
