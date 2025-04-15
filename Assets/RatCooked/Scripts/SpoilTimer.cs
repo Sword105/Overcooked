@@ -37,6 +37,8 @@ public class SpoilTimer : MonoBehaviour
 
     [Tooltip("time it takes for a rat to spawn")]
     [SerializeField] private float RatTimerMax = 5f;
+
+    [SerializeField] private float foodHealth = 5f;
     private float CurrentRatTimer = 5f;
 
     private bool TimerOn = false; //used so that multiple timers don't happen

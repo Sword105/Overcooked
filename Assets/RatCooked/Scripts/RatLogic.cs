@@ -7,6 +7,7 @@ using UnityEngine.AI;
 
 public class RatLogic : MonoBehaviour
 {
+    public event Action OnRatEating;
     public event Action OnRatEscaped;
     
     enum RatState
@@ -143,7 +144,7 @@ public class RatLogic : MonoBehaviour
     {
         if (CompareSelfVSTarget() && !timerEnded) //personal item timer only ticks down when the rat and item are still close by, preserves the timer and pauses it otherwise
         {
-            currentEatingTimer -= Time.deltaTime; //timer ticking down
+            OnRatEating?.Invoke(target); //currentEatingTimer -= Time.deltaTime; //timer ticking down
         }
 
         if (currentEatingTimer <= 0) //end condition, duhh
@@ -151,7 +152,7 @@ public class RatLogic : MonoBehaviour
             Debug.Log("eating over, switching to escaping");
             timerEnded = true;
             currentEatingTimer = 0;
-            //delete food prefab
+            //foodEaten()//delete food prefab 
             
             if (TryFindNearbyFood(out var newTarget)) //if it found a nearby food
             {

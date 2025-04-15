@@ -39,14 +39,21 @@ public class Ratattouille : MonoBehaviour //RATMANAGER
         
         if (ai != null)
         {
-            Debug.Log("rat given directions");
             ai.SetTarget(target); //basically just sets its first destination to the food that spawned it
+
+            ai.OnRatEating += HandleRatEating(); //subscribing to events
+            ai.OnRatEscaped += HandleRatEscaped();
         }
         
         Debug.Log("Rat spawned at: " + chosenLocation.position + ", heading to " + target.position);
 
     }
 
+    private void HandleRatEating()
+    {
+        
+    }
+    
     private Transform FindLocation() //essentially picks a random location from the list of existing spawn points for variety
     {
         return RatSpawnLocations[Random.Range(0, RatSpawnLocations.Count)];
