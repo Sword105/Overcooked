@@ -121,6 +121,11 @@ public class SpoilTimer : MonoBehaviour
     {
         Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
     }
-    
+
+    private void OnRatEaten()
+    {
+        //raycast around it, if theres a rat, delete itself
+        
+    }
     
 }

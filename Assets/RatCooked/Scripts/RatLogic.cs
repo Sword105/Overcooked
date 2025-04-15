@@ -27,10 +27,13 @@ public class RatLogic : MonoBehaviour
     [SerializeField] bool isMoving = false;
     [SerializeField] float eatingTimerMax = 4f;
     [SerializeField] private Ratattouille ratManager;
+    [SerializeField] float nearbyRadius = 2.5f; //float for the food scan
     private float currentEatingTimer = 4f;
     private bool timerEnded = false; 
     private bool isEscaping = false;
     private bool escapeStarted = false;
+    private bool isGrabbed = false;
+    private bool wasGrabbed = false;
     
     private void Awake()
     {
@@ -67,10 +70,19 @@ public class RatLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (grabbed)
+        if (transform.CompareTag("Untagged")) //IF THE RAT GETS GRABBED
         {
+            agent.isStopped = true;
+            Debug.Log("rat grabbed");
             state = RatState.GRABBED;
-        }*/
+            wasGrabbed = true;
+        }
+
+        if (transform.CompareTag("Grabbable") && wasGrabbed) //IF THE RAT IS NO LONGER GRABBED
+        {
+            agent.isStopped = false;
+            state = RatState.ESCAPING;
+        }
         
         switch (state)
         {
@@ -87,6 +99,7 @@ public class RatLogic : MonoBehaviour
                 StateEating();
                 break;
             case RatState.GRABBED:
+                //cry about it
                 break;
             case RatState.PUSHING:
                 //spawns on a counter
@@ -96,19 +109,19 @@ public class RatLogic : MonoBehaviour
 
                 if (!escapeStarted)
                 {
-                    agent.SetDestination(ratManager.PassEscapeLocation());
+                    SetTarget(ratManager.PassEscapeLocation());
                     escapeStarted = true;
-                    Debug.Log("hehe");
                     break; //end the case early to stop bugs
                 }
                 
 
-                if (CompareSelfVSTarget())
+                if (CompareSelfVSTarget() && escapeStarted)
                 {
-                    Debug.Log("rat at target, blowing the fuck up");
                     OnRatEscaped?.Invoke(); //If reached escape point, invoke rat escaped event (prolly used for ratpocalypse and pushing, rat escape counter?) POSSIBLE bug goes off multiple times cause of frames
                     agent.isStopped = true;
+                    Debug.Log("rat obliterated");
                     Destroy(gameObject); //RAT DESTROYED!!!!
+                    
                 }
                 break;
         }
@@ -139,7 +152,18 @@ public class RatLogic : MonoBehaviour
             timerEnded = true;
             currentEatingTimer = 0;
             //delete food prefab
-            state = RatState.ESCAPING;
+            
+            if (TryFindNearbyFood(out var newTarget)) //if it found a nearby food
+            {
+                state = RatState.SCURRY;
+                SetTarget(newTarget); //go to that one and do it all over again
+                currentEatingTimer = eatingTimerMax;
+                timerEnded = false;
+            }
+            else
+            {
+                state = RatState.ESCAPING; //otherwise, run away
+            }
         }
     }
 
@@ -147,6 +171,23 @@ public class RatLogic : MonoBehaviour
     {
         Debug.Log("comparing self");
         return Vector3.Distance(transform.position, target.position) <= distanceThreshold;
+    }
+    
+    private bool TryFindNearbyFood(out Transform newTarget)
+    {
+        Collider[] hits = Physics.OverlapSphere(transform.position, nearbyRadius);
+
+        foreach (var hit in hits)
+        {
+            SpoilTimer food = hit.GetComponent<SpoilTimer>();
+            if (food != null)
+            {
+                newTarget = food.transform; //if it found something, newtarget is made the foods transform, and returns true
+                return true;
+            }
+        }
+        newTarget = null;
+        return false;
     }
 
 }
