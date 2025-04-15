@@ -27,6 +27,9 @@ public class GrabInteractable : Interactable
             {
                 transform.tag = "Untagged";
             }
+            else{
+                transform.tag = "Grabbable";
+            }
         }
         
         else
