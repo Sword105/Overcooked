@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuItems:
   - items: 0e000000
+  - items: 10000000

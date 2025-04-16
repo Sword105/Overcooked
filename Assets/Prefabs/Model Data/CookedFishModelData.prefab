@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6339162352289508871
+--- !u!1 &4175913492987120214
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 247295439313133943}
-  - component: {fileID: -8057519034202299412}
+  - component: {fileID: 1197476441228997998}
+  - component: {fileID: -5658580269880237354}
   m_Layer: 0
-  m_Name: CookedFish
+  m_Name: CookedFishModelData
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &247295439313133943
+--- !u!4 &1197476441228997998
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6339162352289508871}
+  m_GameObject: {fileID: 4175913492987120214}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,20 +32,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-8057519034202299412
+--- !u!114 &-5658580269880237354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6339162352289508871}
+  m_GameObject: {fileID: 4175913492987120214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e82756a48507d7a4bb60204f6c251c30, type: 3}
+  m_Script: {fileID: 11500000, guid: ad236b4337bcae54e9a4b73240ae9f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredItem: 0
-  inputFoodItem: 15
-  outputFoodItem: 16
-  outputGameObject: {fileID: 7536344259547831921, guid: e8c615f58770f22459f1716dca8edef2,
-    type: 3}
+  modelIndicator: 16
+  allowedItemTypes: 
+  storedModelData:
+  - model: {fileID: -1258736543099589447, guid: 3763a610870991740befe42354bfeb4a,
+      type: 3}
+    neededItems: 0e000000

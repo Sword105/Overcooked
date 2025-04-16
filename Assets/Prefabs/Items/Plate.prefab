@@ -155,6 +155,7 @@ MonoBehaviour:
   foodStored: 
   modelResources:
   - {fileID: -5658580269880237354, guid: 741fc39cd5648664e995ea10d0eb8553, type: 3}
+  - {fileID: -5658580269880237354, guid: cdd4b067406f76945a468a060c02ce12, type: 3}
   currentModelResource: {fileID: 0}
 --- !u!65 &8968953238646751623
 BoxCollider:
