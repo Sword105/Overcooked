@@ -32,6 +32,8 @@ public class LevelManager : MonoBehaviour
     public OrderStation orderStation;
     public LevelMenu menu;
 
+    public Transform CopiedOrder;
+    public Transform Organizer;
 
     private GameObject currentExitingNPC;
 
@@ -87,8 +89,14 @@ public class LevelManager : MonoBehaviour
             for (int i = 1; i <= numberOfCustomers; i++)
             {
                 Order newOrder = new Order();
-                newOrder.order = menu.RandomMenuItem();
+                var randomItems = menu.RandomMenuItem();
+                newOrder.order = randomItems.items;
                 newOrder.customer = Instantiate(customerPrefab, customerSpawnPoint);
+
+                Transform copiedOrder = Instantiate(CopiedOrder, Organizer);
+
+                copiedOrder.GetComponent<OrderUI>().text.text = randomItems.text.text;
+                copiedOrder.GetComponent<OrderUI>().image.texture = randomItems.texture;
 
                 newOrder.customer.GetComponent<NavMeshAgent>().SetDestination(customerEndPoint.transform.position);
                 orders.Add(newOrder);
