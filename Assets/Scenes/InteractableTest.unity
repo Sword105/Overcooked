@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 417513234}
   - component: {fileID: 417513233}
   - component: {fileID: 417513232}
-  - component: {fileID: 417513231}
+  - component: {fileID: 417513236}
   m_Layer: 0
   m_Name: Test Table
   m_TagString: Untagged
@@ -388,22 +388,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &417513231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 417513230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31fd919c4fa840d4fb20255bf4ba4cfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  storedItem: {fileID: 0}
-  interactSound: {fileID: 8300000, guid: 03918b915e70e6449b41637ff8535294, type: 3}
-  recipeList:
-  - {fileID: -471207081783178482, guid: 4785cfad038642746a6d7e4d86e46fda, type: 3}
 --- !u!65 &417513232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -490,6 +474,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &417513236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417513230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f535dd05d88aa146862718f7931e4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedItem: {fileID: 0}
+  interactSound: {fileID: 0}
+  recipeList:
+  - {fileID: 1200732670994951655, guid: 0c6cf1b93febcb243b78d8525858d945, type: 3}
+  requiredInteractions: 8
 --- !u!1 &563160280
 GameObject:
   m_ObjectHideFlags: 0
