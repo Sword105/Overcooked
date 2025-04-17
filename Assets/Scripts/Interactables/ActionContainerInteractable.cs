@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimedContainerInteractable : ContainerInteractable
+public class ActionContainerInteractable : ContainerInteractable
 {
-
-    //public List<Recipe> recipeList;
-    public float timerDuration = 5f; // total time in seconds
-    private float timer;
-    private bool isTiming = false;
+    //These variables track the interactions required and left in the container.    
+    public int requiredInteractions = 8;
+    private int remainingInteractions;
     private bool foodReady = false;
 
-
+    
+    
     public override void Interact(GameObject player, Transform heldItem)
     {
         if (heldItem != null)
@@ -23,22 +22,32 @@ public class TimedContainerInteractable : ContainerInteractable
                 heldItem.transform.position = new Vector3(transform.position.x, transform.GetComponent<MeshRenderer>().bounds.max.y + heldItem.GetComponent<MeshRenderer>().bounds.extents.y, transform.position.z);
                 heldItem.transform.SetParent(transform, true);
                 base.Interact(player, heldItem);
-
-                StartTimer();
+                
+                //resets the count of the interactions when a new item is placed in the ActionContainer
+                remainingInteractions = requiredInteractions;
+                
             }
-            else //storedItem = null
+            else
             {
                 Debug.Log("Not in recipeList");
             }
         }
+        //Reduces the number of remainingInteractions, and if it is = 0, cooks the item
         else if(foodReady == false)
         {
-            Debug.Log("Not possible to grab an item while cooking");
+            remainingInteractions -= 1;
+            Debug.Log("Remaining Interactions: " + remainingInteractions);
+
+            //Cook the item
+            if(remainingInteractions <= 0){
+                cook();
+                remainingInteractions = requiredInteractions;
+            }
         }
         else
         {
-            //If there is a stored item, and you aren't holding anything grab it
-            if (storedItem != null && foodReady == true && isTiming == false)
+            //If there is a stored item, foodReady == true, and you aren't holding anything grab it
+            if (storedItem != null && foodReady == true)
             {
                 base.Interact(player, heldItem);
                 foodReady = false;
@@ -52,35 +61,9 @@ public class TimedContainerInteractable : ContainerInteractable
         //This updates the heldItem and storedItem variables in memory
     }
 
-    
-    //Starts the timer in Update()
-    public void StartTimer()
-    {
-        timer = timerDuration;
-        isTiming = true;
-        Debug.Log("The food began to cook");
-    }
 
-    
-    void Update()
-    {
 
-        //Starts cooking the storedItem
-        if (isTiming)
-        {
-            timer -= Time.deltaTime;
-
-            // Print the remaining whole seconds
-            Debug.Log($"Time left: {Mathf.CeilToInt(timer)}s");
-
-            if (timer <= 0f)
-            {
-                cook(); 
-            }
-        }
-    }
-
-    //When the timer = 0 in Update(), Instantiates the item of the recipe, and destroys the stored item.
+    // When remainingInteractions <=0, this function is called, and we get the new item
     void cook(){
         
         int inputRecipeList = findInputItemInRecipeList(storedItem.GetComponent<GrabInteractable>().itemType);
@@ -104,11 +87,11 @@ public class TimedContainerInteractable : ContainerInteractable
             storedItem.GetComponent<Collider>().isTrigger = true;
             
             foodReady = true;
-            isTiming = false;
             Debug.Log("The food is ready!");
         }
     }
-
+    
+    
     //Finds the input of a recipe in the recipe list based on the inputFoodItem
     int findInputItemInRecipeList(ItemType i){
 
@@ -130,6 +113,4 @@ public class TimedContainerInteractable : ContainerInteractable
     {
         return foodReady;
     }
-    
-
 }

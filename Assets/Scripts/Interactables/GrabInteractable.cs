@@ -28,6 +28,15 @@ public class GrabInteractable : Interactable
                 transform.tag = "Untagged";
             }
         }
+
+        //Checks if the player can grab an item in an ActionContainer depending if it is already cooked or not
+        else if(transform.GetComponentInParent<ActionContainerInteractable>() != null) 
+        {
+            if(transform.GetComponentInParent<ActionContainerInteractable>().getFoodReady() == false)
+            {
+                transform.tag = "Untagged";
+            }
+        }
         
         else
         {
@@ -47,6 +56,11 @@ public class GrabInteractable : Interactable
                 transform.GetComponentInParent<TimedContainerInteractable>().Interact(player,null);
             }
 
+            //Failsafe for some bugs in ActionContainers
+            if(transform.GetComponentInParent<ActionContainerInteractable>() != null){
+                transform.GetComponentInParent<ActionContainerInteractable>().Interact(player,null);
+            }
+
             //If the player is holding nothing, reset the object's rotation, place it in front of the player, and disable its physics
             transform.rotation = Quaternion.identity;
             transform.position = player.transform.position + player.transform.forward * 1.2f;
@@ -60,6 +74,11 @@ public class GrabInteractable : Interactable
             {
                 AudioManager.instance.PlaySoundFX(interactSound, transform, 1f);
             }
+        }
+        //Prevents the bug of not detecting the interaction in ActionContainers
+        else if(heldItem == null && transform.CompareTag("Untagged") && transform.GetComponentInParent<ActionContainerInteractable>() != null)
+        {
+            transform.GetComponentInParent<ActionContainerInteractable>().Interact(player,null);
         }
         else
         {
