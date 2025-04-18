@@ -7,7 +7,6 @@ using static UnityEngine.InputSystem.InputAction;
 public class PlayerInputHandler : MonoBehaviour
 {
     public PlayerData playerData;
-    public Mesh playerModel;
 
     [SerializeField]
     private MovementScript3 movementScript;
@@ -29,7 +28,6 @@ public class PlayerInputHandler : MonoBehaviour
     public void StartPlayer(PlayerData data)
     {
         playerData = data;
-        playerModel = data.playerModel;
         playerData.input.onActionTriggered += Input_onActionTriggered;
     }
 
@@ -42,7 +40,7 @@ public class PlayerInputHandler : MonoBehaviour
 
         if (obj.action.name == controls.player.Dash.name)
         {
-            movementScript.OnDash(obj);
+            //movementScript.OnDash(obj);
         }
 
         if (obj.action.name == controls.player.Interact.name)

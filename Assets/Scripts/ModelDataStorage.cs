@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public struct ModelData
 {
-    public Mesh model;
+    public GameObject model;
     public List<ItemType> neededItems;
 }
 

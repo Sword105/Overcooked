@@ -66,7 +66,7 @@ public class TimedContainerInteractable : ContainerInteractable
     }
 
     
-    void Update()
+    new void Update()
     {
 
         //Starts cooking the storedItem
@@ -103,6 +103,8 @@ public class TimedContainerInteractable : ContainerInteractable
                 isTiming = false;
             }
         }
+
+        UpdateOutline();
     }
 
     //When the timer = 0 in Update(), Instantiates the item of the recipe, and destroys the stored item.

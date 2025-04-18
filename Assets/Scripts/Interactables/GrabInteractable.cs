@@ -45,13 +45,12 @@ public class GrabInteractable : Interactable
         {
             transform.tag = "Grabbable";
         }
+
+        UpdateOutline();
     }
 
     public override void Interact(GameObject player, Transform heldItem)
     {
-        
-
-        
         if (heldItem == null && transform.CompareTag("Grabbable"))
         {
             //Failsafe for a lot of bugs in TimedContainers

@@ -11,7 +11,6 @@ public class PlateStation : ContainerInteractable
     {
         this.GetComponent<OutlineThing>().OutlineWidth = 5;
         this.GetComponent<OutlineThing>().enabled = false;
-        PlayerEvent.sendPlayerData += HandlePlayerData;
         //This just sets storedItem to not be empty so that the interaction priority doesn't mess up
 
         for (int i = 0; i < 6; i++)
@@ -25,10 +24,14 @@ public class PlateStation : ContainerInteractable
     // Delete later on, this is just for testing stacking
     new void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.P))
         {
             AddPlate();
         }
+        */
+
+        UpdateOutline();
     }
 
     public override void Interact(GameObject player, Transform heldItem)

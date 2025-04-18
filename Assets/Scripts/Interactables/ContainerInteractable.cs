@@ -19,6 +19,8 @@ public class ContainerInteractable : Interactable
         {
             storedItem = null;
         }
+
+        UpdateOutline();
     }
 
     public override void Interact(GameObject player, Transform heldItem)

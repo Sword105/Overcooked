@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
+/*
 public static class PlayerEvent
 {
     public static event Action<Collider> sendPlayerData;
@@ -15,6 +16,7 @@ public static class PlayerEvent
         sendPlayerData?.Invoke(nearestInteractable);
     }
 }
+*/
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -27,7 +29,7 @@ public class PlayerInteraction : MonoBehaviour
     public float interactionRange = 0.8f;
     public float interactionForwardOffset = 1.3f;
 
-    [NonSerialized] public Collider nearestInteractable = null;
+    /*[NonSerialized]*/ public Collider nearestInteractable = null;
 
     public void OnInteract(InputAction.CallbackContext context)
     {
@@ -35,7 +37,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             isInteracting = true;
         }
-        Debug.Log(isInteracting);
+        //Debug.Log(isInteracting);
     }
 
     private void Start()
@@ -49,8 +51,6 @@ public class PlayerInteraction : MonoBehaviour
         Vector3 interactionLocation = player.transform.position + (player.transform.forward * interactionForwardOffset);
         Collider[] nearbyObjects = Physics.OverlapCapsule(interactionLocation + new Vector3(0, 1, 0), interactionLocation + new Vector3(0, -1, 0), interactionRange);
         nearestInteractable = FindClosestInteractable(nearbyObjects);
-
-        PlayerEvent.callEvent(nearestInteractable);
 
         //Interacts with the closest interactable object
         if (isInteracting && nearestInteractable != null && nearestInteractable.GetComponent<Interactable>() != null)

@@ -153,6 +153,9 @@ MonoBehaviour:
   speed: 15
   dashing: 1
   dashCounter: 5
+  raycastIgnoreLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &-5188411705930700770
 MonoBehaviour:
   m_ObjectHideFlags: 0

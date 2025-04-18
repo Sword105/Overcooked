@@ -3,46 +3,66 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(OutlineThing))]
-public abstract class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour 
 {
-    private bool eventCheck = false;
-    //Placeholder method
-    //This is meant to be overridden by subclasses of Interactable
-    void Start()
+
+    void Awake()
     {
-        this.GetComponent<OutlineThing>().OutlineWidth = 5;
-        this.GetComponent<OutlineThing>().enabled = false;
-        PlayerEvent.sendPlayerData += HandlePlayerData;
+        GetComponent<OutlineThing>().OutlineWidth = 5;
+        GetComponent<OutlineThing>().enabled = false;
+        GetComponent<OutlineThing>().OutlineMode = OutlineThing.Mode.OutlineVisible;
     }
     
-    public void HandlePlayerData(Collider x)
+    public void UpdateOutline()
     {
-        if (!eventCheck)
+        bool isANearestInteractable = false;
+        foreach (PlayerInteraction player in PlayerInfo.listOfPlayers())
         {
-            if (x.gameObject == null)
+            if (player.nearestInteractable != null && ReferenceEquals(player.nearestInteractable.gameObject, gameObject))
             {
-                this.GetComponent<OutlineThing>().enabled = false;
+                isANearestInteractable = true;
+                break;
             }
-            else
-            {
-                Debug.Log(x.gameObject.name);
-                if (ReferenceEquals(x.gameObject, this.gameObject))
-                {
-                    this.GetComponent<OutlineThing>().enabled = true;
-                }
-                else
-                {
-                    this.GetComponent<OutlineThing>().enabled = false;
-                }
-            }
-            eventCheck = true;
+        }
+
+        if (isANearestInteractable)
+        {
+            GetComponent<OutlineThing>().enabled = true;
         }
         else
         {
-            eventCheck = false;
+            GetComponent<OutlineThing>().enabled = false;
         }
     }
 
+    private void Update()
+    {
+        UpdateOutline();
+    }
+
+    /* SCRAPPED
+    public void HandlePlayerData(Collider nearestInteractable)
+    {
+        if (nearestInteractable == null)
+        {
+            this.GetComponent<OutlineThing>().enabled = false;
+        }
+        else
+        {
+            if (ReferenceEquals(nearestInteractable, this))
+            {
+                this.GetComponent<OutlineThing>().enabled = true;
+            }
+            else
+            {
+                this.GetComponent<OutlineThing>().enabled = false;
+            }
+        }
+    }
+    */
+
+    //Placeholder method
+    //This is meant to be overridden by subclasses of Interactable
     public virtual void Interact(GameObject player, Transform heldItem)
     {
         //Debug.Log(player.name + " is interacting with object " + item.name);

@@ -1523,6 +1523,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1695520437}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 18f2bab3ad19fb24c82437fdf99385ff,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1695520438}
   m_SourcePrefab: {fileID: 100100000, guid: 18f2bab3ad19fb24c82437fdf99385ff, type: 3}
 --- !u!1001 &205179655
 PrefabInstance:
@@ -1605,6 +1609,7 @@ GameObject:
   - component: {fileID: 211150427}
   - component: {fileID: 211150426}
   - component: {fileID: 211150429}
+  - component: {fileID: 211150430}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -1713,6 +1718,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &211150430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211150424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &214962348
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,6 +2085,7 @@ GameObject:
   - component: {fileID: 235404697}
   - component: {fileID: 235404696}
   - component: {fileID: 235404699}
+  - component: {fileID: 235404700}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -2170,6 +2194,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &235404700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235404694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &240576593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2923,6 +2965,7 @@ GameObject:
   - component: {fileID: 368382525}
   - component: {fileID: 368382524}
   - component: {fileID: 368382527}
+  - component: {fileID: 368382528}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -3031,6 +3074,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &368382528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368382522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &379343962 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 224812119749960696, guid: f687d39a2f7803349893b7d5f5e4d696,
@@ -3269,6 +3330,7 @@ GameObject:
   - component: {fileID: 415906655}
   - component: {fileID: 415906654}
   - component: {fileID: 415906657}
+  - component: {fileID: 415906658}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -3377,6 +3439,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &415906658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415906652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &436512155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3838,6 +3918,7 @@ GameObject:
   - component: {fileID: 510068996}
   - component: {fileID: 510068995}
   - component: {fileID: 510068998}
+  - component: {fileID: 510068999}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -3946,6 +4027,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &510068999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510068993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &512366615 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 76437dde85b553a448feac48309ee249,
@@ -3965,6 +4064,7 @@ GameObject:
   - component: {fileID: 523158401}
   - component: {fileID: 523158400}
   - component: {fileID: 523158403}
+  - component: {fileID: 523158404}
   m_Layer: 0
   m_Name: Box_01 (1)
   m_TagString: Untagged
@@ -4073,6 +4173,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &523158404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523158398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &524841636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4154,6 +4272,7 @@ GameObject:
   - component: {fileID: 533962027}
   - component: {fileID: 533962026}
   - component: {fileID: 533962029}
+  - component: {fileID: 533962030}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -4262,6 +4381,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &533962030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533962024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &534313903
 GameObject:
   m_ObjectHideFlags: 0
@@ -4380,6 +4517,7 @@ GameObject:
   - component: {fileID: 543318045}
   - component: {fileID: 543318044}
   - component: {fileID: 543318047}
+  - component: {fileID: 543318048}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -4488,6 +4626,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &543318048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543318042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &547111405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4770,6 +4926,7 @@ GameObject:
   - component: {fileID: 570511023}
   - component: {fileID: 570511022}
   - component: {fileID: 570511025}
+  - component: {fileID: 570511026}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -4878,6 +5035,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &570511026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570511020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &572558349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5058,6 +5233,7 @@ GameObject:
   - component: {fileID: 599305868}
   - component: {fileID: 599305867}
   - component: {fileID: 599305870}
+  - component: {fileID: 599305871}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -5166,6 +5342,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &599305871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599305865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &600338417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5388,6 +5582,7 @@ GameObject:
   - component: {fileID: 629220714}
   - component: {fileID: 629220713}
   - component: {fileID: 629220716}
+  - component: {fileID: 629220717}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -5496,6 +5691,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &629220717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629220711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &630654177
 GameObject:
   m_ObjectHideFlags: 0
@@ -5756,6 +5969,7 @@ GameObject:
   - component: {fileID: 674594848}
   - component: {fileID: 674594847}
   - component: {fileID: 674594850}
+  - component: {fileID: 674594851}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -5864,6 +6078,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &674594851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674594845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &678455775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6082,6 +6314,7 @@ GameObject:
   - component: {fileID: 687352771}
   - component: {fileID: 687352770}
   - component: {fileID: 687352773}
+  - component: {fileID: 687352774}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -6190,6 +6423,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &687352774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687352768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &709169707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6339,6 +6590,7 @@ GameObject:
   - component: {fileID: 718565204}
   - component: {fileID: 718565203}
   - component: {fileID: 718565206}
+  - component: {fileID: 718565207}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -6447,6 +6699,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &718565207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718565201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &732845924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6728,6 +6998,7 @@ GameObject:
   - component: {fileID: 747191447}
   - component: {fileID: 747191446}
   - component: {fileID: 747191449}
+  - component: {fileID: 747191450}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -6836,6 +7107,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &747191450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747191444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &755230821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6948,6 +7237,7 @@ GameObject:
   - component: {fileID: 758484898}
   - component: {fileID: 758484897}
   - component: {fileID: 758484900}
+  - component: {fileID: 758484901}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -7056,6 +7346,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &758484901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758484895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &770509369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7206,6 +7514,7 @@ GameObject:
   - component: {fileID: 780959166}
   - component: {fileID: 780959165}
   - component: {fileID: 780959168}
+  - component: {fileID: 780959169}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -7314,6 +7623,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &780959169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780959163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &783721617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7704,6 +8031,7 @@ GameObject:
   - component: {fileID: 823322049}
   - component: {fileID: 823322048}
   - component: {fileID: 823322051}
+  - component: {fileID: 823322052}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -7812,6 +8140,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &823322052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823322046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &827784770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8038,6 +8384,7 @@ GameObject:
   - component: {fileID: 837543205}
   - component: {fileID: 837543204}
   - component: {fileID: 837543207}
+  - component: {fileID: 837543208}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -8146,6 +8493,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &837543208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837543202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &853405097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8798,6 +9163,7 @@ GameObject:
   - component: {fileID: 920476261}
   - component: {fileID: 920476260}
   - component: {fileID: 920476263}
+  - component: {fileID: 920476264}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -8906,6 +9272,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &920476264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920476258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &948001280
 GameObject:
   m_ObjectHideFlags: 0
@@ -8919,6 +9303,7 @@ GameObject:
   - component: {fileID: 948001283}
   - component: {fileID: 948001282}
   - component: {fileID: 948001285}
+  - component: {fileID: 948001286}
   m_Layer: 0
   m_Name: Box_01 (2)
   m_TagString: Untagged
@@ -9027,6 +9412,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &948001286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948001280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &950196527
 GameObject:
   m_ObjectHideFlags: 0
@@ -9193,6 +9596,7 @@ GameObject:
   - component: {fileID: 966980283}
   - component: {fileID: 966980282}
   - component: {fileID: 966980285}
+  - component: {fileID: 966980286}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -9301,6 +9705,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &966980286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966980280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &985826693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9382,6 +9804,7 @@ GameObject:
   - component: {fileID: 995010878}
   - component: {fileID: 995010877}
   - component: {fileID: 995010880}
+  - component: {fileID: 995010881}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -9490,6 +9913,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &995010881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995010875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1005861032 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1911595180416401739, guid: 9970c8c63eda133439d9b4039916a1a8,
@@ -9530,6 +9971,7 @@ GameObject:
   - component: {fileID: 1026309382}
   - component: {fileID: 1026309381}
   - component: {fileID: 1026309384}
+  - component: {fileID: 1026309385}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -9638,6 +10080,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1026309385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026309379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1033067900 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5bd5826050924dd409e479e212a4eeb4,
@@ -9944,6 +10404,7 @@ GameObject:
   - component: {fileID: 1095638015}
   - component: {fileID: 1095638014}
   - component: {fileID: 1095638017}
+  - component: {fileID: 1095638018}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -10052,6 +10513,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1095638018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095638012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1096385594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11131,6 +11610,7 @@ GameObject:
   - component: {fileID: 1295253539}
   - component: {fileID: 1295253538}
   - component: {fileID: 1295253541}
+  - component: {fileID: 1295253542}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -11239,6 +11719,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1295253542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295253536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1316755996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11450,6 +11948,7 @@ GameObject:
   - component: {fileID: 1330817887}
   - component: {fileID: 1330817886}
   - component: {fileID: 1330817889}
+  - component: {fileID: 1330817890}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -11558,6 +12057,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1330817890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330817884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1353015552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12206,6 +12723,7 @@ GameObject:
   - component: {fileID: 1423754727}
   - component: {fileID: 1423754726}
   - component: {fileID: 1423754729}
+  - component: {fileID: 1423754730}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -12314,6 +12832,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1423754730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423754724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1424854060
 GameObject:
   m_ObjectHideFlags: 0
@@ -12605,6 +13141,7 @@ GameObject:
   - component: {fileID: 1440909704}
   - component: {fileID: 1440909703}
   - component: {fileID: 1440909706}
+  - component: {fileID: 1440909707}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -12713,6 +13250,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1440909707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440909701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1443939326
 GameObject:
   m_ObjectHideFlags: 0
@@ -12726,6 +13281,7 @@ GameObject:
   - component: {fileID: 1443939329}
   - component: {fileID: 1443939328}
   - component: {fileID: 1443939331}
+  - component: {fileID: 1443939332}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -12834,6 +13390,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1443939332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443939326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1451044604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13207,6 +13781,7 @@ GameObject:
   - component: {fileID: 1487865396}
   - component: {fileID: 1487865395}
   - component: {fileID: 1487865398}
+  - component: {fileID: 1487865399}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -13315,6 +13890,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1487865399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487865393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1496557851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14465,6 +15058,7 @@ GameObject:
   - component: {fileID: 1632493396}
   - component: {fileID: 1632493395}
   - component: {fileID: 1632493398}
+  - component: {fileID: 1632493399}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -14573,6 +15167,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1632493399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632493393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1649749989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14935,16 +15547,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 97296835685882168, guid: 3f37713aa2384e74a864d557910ed079,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 97296835685882168, guid: 3f37713aa2384e74a864d557910ed079,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 166231393131052366, guid: 3f37713aa2384e74a864d557910ed079,
         type: 3}
       propertyPath: m_Name
@@ -15000,16 +15602,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.082
       objectReference: {fileID: 0}
-    - target: {fileID: 5157579463594782767, guid: 3f37713aa2384e74a864d557910ed079,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5157579463594782767, guid: 3f37713aa2384e74a864d557910ed079,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15060,6 +15652,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9839959, y: 0.032720927, z: 0.4381698}
   m_Center: {x: 0.0007792413, y: 0.01636902, z: 0.00022684038}
+--- !u!114 &1695520438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695520432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1700539832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15537,6 +16147,7 @@ GameObject:
   - component: {fileID: 1777881266}
   - component: {fileID: 1777881265}
   - component: {fileID: 1777881268}
+  - component: {fileID: 1777881269}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -15645,6 +16256,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1777881269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777881263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1804541278
 GameObject:
   m_ObjectHideFlags: 0
@@ -15658,6 +16287,7 @@ GameObject:
   - component: {fileID: 1804541281}
   - component: {fileID: 1804541280}
   - component: {fileID: 1804541283}
+  - component: {fileID: 1804541284}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -15766,6 +16396,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1804541284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804541278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1804717793
 GameObject:
   m_ObjectHideFlags: 0
@@ -15779,6 +16427,7 @@ GameObject:
   - component: {fileID: 1804717796}
   - component: {fileID: 1804717795}
   - component: {fileID: 1804717798}
+  - component: {fileID: 1804717799}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -15887,6 +16536,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1804717799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804717793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1818489462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15968,6 +16635,7 @@ GameObject:
   - component: {fileID: 1829378364}
   - component: {fileID: 1829378363}
   - component: {fileID: 1829378366}
+  - component: {fileID: 1829378367}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -16076,6 +16744,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1829378367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829378361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1841357720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16157,6 +16843,7 @@ GameObject:
   - component: {fileID: 1864404713}
   - component: {fileID: 1864404712}
   - component: {fileID: 1864404715}
+  - component: {fileID: 1864404716}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -16265,6 +16952,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1864404716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864404710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1878621783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16788,6 +17493,7 @@ GameObject:
   - component: {fileID: 1919405385}
   - component: {fileID: 1919405384}
   - component: {fileID: 1919405387}
+  - component: {fileID: 1919405388}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -16896,6 +17602,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1919405388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919405382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1921278289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16987,6 +17711,7 @@ GameObject:
   - component: {fileID: 1927592116}
   - component: {fileID: 1927592115}
   - component: {fileID: 1927592118}
+  - component: {fileID: 1927592119}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -17095,6 +17820,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1927592119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927592113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1933569426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17176,6 +17919,7 @@ GameObject:
   - component: {fileID: 1943257383}
   - component: {fileID: 1943257382}
   - component: {fileID: 1943257385}
+  - component: {fileID: 1943257386}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -17284,6 +18028,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &1943257386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943257380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1965465746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18526,6 +19288,7 @@ GameObject:
   - component: {fileID: 2038063896}
   - component: {fileID: 2038063895}
   - component: {fileID: 2038063898}
+  - component: {fileID: 2038063899}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -18634,6 +19397,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &2038063899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038063893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2054457064
 GameObject:
   m_ObjectHideFlags: 0
@@ -18647,6 +19428,7 @@ GameObject:
   - component: {fileID: 2054457067}
   - component: {fileID: 2054457066}
   - component: {fileID: 2054457069}
+  - component: {fileID: 2054457070}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -18755,6 +19537,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &2054457070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054457064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2058991905
 GameObject:
   m_ObjectHideFlags: 0
@@ -18768,6 +19568,7 @@ GameObject:
   - component: {fileID: 2058991908}
   - component: {fileID: 2058991907}
   - component: {fileID: 2058991910}
+  - component: {fileID: 2058991911}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -18876,6 +19677,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &2058991911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058991905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2071042215
 GameObject:
   m_ObjectHideFlags: 0
@@ -18889,6 +19708,7 @@ GameObject:
   - component: {fileID: 2071042218}
   - component: {fileID: 2071042217}
   - component: {fileID: 2071042220}
+  - component: {fileID: 2071042221}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -18997,6 +19817,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &2071042221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071042215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &2075672756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19313,6 +20151,7 @@ GameObject:
   - component: {fileID: 2114762365}
   - component: {fileID: 2114762364}
   - component: {fileID: 2114762367}
+  - component: {fileID: 2114762368}
   m_Layer: 0
   m_Name: Box_01
   m_TagString: Untagged
@@ -19421,6 +20260,24 @@ MonoBehaviour:
   storedItem: {fileID: 0}
   interactSound: {fileID: 0}
   recipeList: []
+--- !u!114 &2114762368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114762362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &2124888114
 PrefabInstance:
   m_ObjectHideFlags: 0

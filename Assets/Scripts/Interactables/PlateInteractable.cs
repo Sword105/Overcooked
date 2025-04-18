@@ -27,6 +27,8 @@ public class PlateInteractable : GrabInteractable
         {
             transform.tag = "Grabbable";
         }
+
+        UpdateOutline();
     }
 
     public override void Interact(GameObject player, Transform heldItem)
@@ -125,7 +127,13 @@ public class PlateInteractable : GrabInteractable
 
                 if (changeModel)
                 {
-                    foodModel.GetComponent<MeshFilter>().mesh = y.model;
+                    GameObject newModel = Instantiate(y.model, foodModel.transform.position, Quaternion.identity);
+                    newModel.transform.position = new Vector3(transform.position.x, transform.GetComponent<MeshRenderer>().bounds.max.y + newModel.GetComponent<MeshRenderer>().bounds.extents.y - 0.05f, transform.position.z);
+                    newModel.transform.SetParent(transform, true);
+
+                    Destroy(foodModel);
+                    foodModel = newModel;
+
                 }
             }
         }

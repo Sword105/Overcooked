@@ -8,8 +8,8 @@ public class TrashInteractable : ContainerInteractable
     {
         this.GetComponent<OutlineThing>().OutlineWidth = 5;
         this.GetComponent<OutlineThing>().enabled = false;
-        PlayerEvent.sendPlayerData += HandlePlayerData;
     }
+
     public override void Interact(GameObject player, Transform heldItem)
     {
         if (heldItem != null)

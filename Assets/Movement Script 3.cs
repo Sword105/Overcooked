@@ -32,17 +32,18 @@ public class MovementScript3 : MonoBehaviour
         }
     }
 
+    /*
     public void OnDash(InputAction.CallbackContext context){
         if(context.performed){
             dashed = true;
         }
     }
-   
+    */
 
     void Start(){
 
         currentDashes = dashCounter;
-
+        player = GetComponent<Rigidbody>();
     }
 
 
@@ -62,14 +63,18 @@ public class MovementScript3 : MonoBehaviour
    
     void FixedUpdate() {
 
+        /*
         if (!Physics.Raycast(transform.position, transform.forward, 0.8f, raycastIgnoreLayer))
         {
             player.MovePosition((Vector3)transform.position + movementInput * speed * Time.deltaTime); // movementposition used for movement, vector3 for 3d
         }
-        
+        */
+
+        player.MovePosition((Vector3)transform.position + movementInput * speed * Time.deltaTime);
+
 
         //makes the magnitude thing so that if you are clicking on a button or not - keeps character looking in the same direction
-        if(movementInput.magnitude >=0.1f){
+        if (movementInput.magnitude >=0.1f){
 
         float angle = Mathf.Atan2(movementInput.x, movementInput.z) * Mathf.Rad2Deg; //certain math thing that apparently almost all games use,
                                                                             //to make character face certain direction
