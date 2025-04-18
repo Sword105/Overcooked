@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: f3166dc661249944a86f3827ee4e252f
   - enabled: 1
+    path: Assets/Scenes/Actual Levels/StoneAge.unity
+    guid: af1044a78313681449dadd5e7c298ceb
+  - enabled: 1
     path: Assets/Scenes/InteractableTest.unity
     guid: b61369d00a23f944c8d85adb0a7719e1
   - enabled: 1
