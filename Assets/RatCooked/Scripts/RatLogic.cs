@@ -34,11 +34,14 @@ public class RatLogic : MonoBehaviour
     private bool timerEnded = false; 
     private bool escapeStarted = false;
     private bool wasGrabbed = false;
+    [SerializeField] float patienceMeter = 5f;
+    [SerializeField] private float maxPatience = 5f;
     
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         state = RatState.ACTIVE; //sets default state
+        patienceMeter = maxPatience;
     }
 
     private void Start()
@@ -166,6 +169,17 @@ public class RatLogic : MonoBehaviour
             state = RatState.EATING;
             Debug.Log(state);
         }
+        else
+        {
+            patienceMeter -= Time.deltaTime;
+        }
+
+        if (patienceMeter <= 0f)
+        {
+            Debug.Log("impatient");
+            SetTarget(target); //impatient
+            patienceMeter = maxPatience;
+        }
     }
 
     private void StateEating()
@@ -185,6 +199,7 @@ public class RatLogic : MonoBehaviour
                 currentlyEating = false;
                 OnRatStoppedEating?.Invoke(this, Obsession);
                 SetTarget(Obsession.transform);
+                
             }
         }
 
@@ -211,7 +226,10 @@ public class RatLogic : MonoBehaviour
     private bool CompareSelfVSTarget() //compare distance between rat and target location
     {
         Debug.Log("comparing self");
-        return Vector3.Distance(transform.position, Obsession.transform.position) <= distanceThreshold;
+        Debug.Log(transform.position);
+        Debug.Log(target.transform.position);
+        Debug.Log((Vector3.Distance(transform.position, target.transform.position) <= distanceThreshold));
+        return Vector3.Distance(transform.position, target.transform.position) <= distanceThreshold;
     }
     
     private bool TryFindNearbyFood(out SpoilTimer newTarget)
