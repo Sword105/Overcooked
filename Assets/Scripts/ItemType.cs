@@ -17,7 +17,8 @@ public enum ItemType
     RAW_CHICKEN,
     COOKED_CHICKEN,
     RAW_FISH,
-    COOKED_FISH
+    COOKED_FISH,
+    SALAD
 
 
 }
