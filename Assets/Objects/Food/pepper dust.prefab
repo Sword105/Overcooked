@@ -141,8 +141,8 @@ MonoBehaviour:
   GroundedRadius: 0.5
   GroundLayers:
     serializedVersion: 2
-    m_Bits: 128
-  RatTimerMax: 5
+    m_Bits: 129
+  RatTimerMax: 2
   foodHealth: 5
   isEaten: 0
   ratEating: 0

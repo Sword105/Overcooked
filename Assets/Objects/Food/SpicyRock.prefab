@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9202665135603569731}
   - component: {fileID: -6701950004643108466}
   - component: {fileID: -7426760897334823907}
+  - component: {fileID: -7973005385579625974}
   m_Layer: 3
   m_Name: SpicyRock
   m_TagString: Grabbable
@@ -167,3 +168,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0047296444, y: 0.004675161, z: 0.004754874}
   m_Center: {x: -0.00008994783, y: 0.00016883781, z: 0.0002416912}
+--- !u!114 &-7973005385579625974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245528978611264703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc53f93470cdee54cae752f3eb335b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnGround: 0
+  GroundedOffset: -0.14
+  GroundedRadius: 0.5
+  GroundLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  RatTimerMax: 2
+  foodHealth: 5
+  isEaten: 0
+  ratEating: 0
