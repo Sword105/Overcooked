@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactSound: {fileID: 8300000, guid: 03918b915e70e6449b41637ff8535294, type: 3}
-  itemType: 5
+  itemType: 6
 --- !u!114 &1249876384601280490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,4 +264,7 @@ MonoBehaviour:
   GroundLayers:
     serializedVersion: 2
     m_Bits: 1
-  RatTimerMax: 5
+  RatTimerMax: 2
+  foodHealth: 5
+  isEaten: 0
+  ratEating: 0

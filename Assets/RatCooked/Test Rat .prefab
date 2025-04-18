@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactSound: {fileID: 8300000, guid: 03918b915e70e6449b41637ff8535294, type: 3}
-  itemType: 4
+  itemType: 5
 --- !u!114 &3131724160665800251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,13 +252,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08b7bdf81ca649343a40dd5f996129e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Obsession: {fileID: 0}
   agent: {fileID: 0}
   target: {fileID: 0}
+  ratManager: {fileID: 0}
   state: 0
   distanceThreshold: 0.89
-  isMoving: 0
-  eatingTimerMax: 4
-  ratManager: {fileID: 0}
+  nearbyRadius: 2.5
+  finishedEating: 0
+  currentlyEating: 0
 --- !u!195 &6231730751090464167
 NavMeshAgent:
   m_ObjectHideFlags: 0

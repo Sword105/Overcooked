@@ -80,6 +80,7 @@ public class Ratattouille : MonoBehaviour //RATMANAGER
     private void HandleRatEating(RatLogic rat, SpoilTimer Obsession)
     {
         Obsession.ratEating++;
+        Debug.Log(Obsession.ratEating);
     }
 
     private void HandleRatStoppedEating(RatLogic rat, SpoilTimer Obsession)

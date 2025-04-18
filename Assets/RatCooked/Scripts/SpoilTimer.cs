@@ -89,6 +89,11 @@ public class SpoilTimer : MonoBehaviour
 
     private void BeingEaten()
     {
+
+        if (ratEating <= 0)
+        {
+            ratEating = 0; //bug prevention 
+        }
         
         if (ratEating >= 1) //if theres at least one rat... enable everything
         {
