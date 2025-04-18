@@ -6,6 +6,8 @@ public enum ItemType
     PAN,
     PLATE,
     
+    RAT, //rats gotta be placed in the middle here for certain code logic reasons
+    
     TOMATO,
     CHOPPED_TOMATO,
     TOMATO_SOUP,
