@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heldItem: {fileID: 0}
   interactionRange: 0.8
-  interactionForwardOffset: 0.6
+  interactionForwardOffset: 1.3
   nearestInteractable: {fileID: 0}
 --- !u!114 &2523421344759467845
 MonoBehaviour:

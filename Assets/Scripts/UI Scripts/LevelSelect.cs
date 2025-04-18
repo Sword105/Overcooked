@@ -40,7 +40,7 @@ public class LevelSelect : MonoBehaviour
 
     public void selectFutureLevel()
     {
-        setupManager.sceneToLoad = "FutureAge";
+        setupManager.sceneToLoad = "Futuristic";
         //SceneManager.LoadScene(5);
     }
 

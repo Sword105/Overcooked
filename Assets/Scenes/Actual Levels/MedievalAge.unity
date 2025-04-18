@@ -2763,6 +2763,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RatManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7721650364572139667, guid: 8c893d2250eeeb34ebacb5ffc256a2cd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
