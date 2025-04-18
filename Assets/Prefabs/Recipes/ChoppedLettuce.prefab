@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8144352996706436262
+--- !u!1 &6339162352289508871
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5572810175181716781}
-  - component: {fileID: -471207081783178482}
+  - component: {fileID: 247295439313133943}
+  - component: {fileID: -8057519034202299412}
   m_Layer: 0
-  m_Name: ChoppedTomato
+  m_Name: ChoppedLettuce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5572810175181716781
+--- !u!4 &247295439313133943
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8144352996706436262}
+  m_GameObject: {fileID: 6339162352289508871}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,20 +32,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-471207081783178482
+--- !u!114 &-8057519034202299412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8144352996706436262}
+  m_GameObject: {fileID: 6339162352289508871}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e82756a48507d7a4bb60204f6c251c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   requiredItem: 0
-  inputFoodItem: 5
-  outputFoodItem: 6
-  outputGameObject: {fileID: 8399934002706118255, guid: 40e959c9774b5f843aff21c73f7cda3e,
+  inputFoodItem: 11
+  outputFoodItem: 12
+  outputGameObject: {fileID: 992860576009784902, guid: 729ae03345fdfd340911683b12ff3d94,
     type: 3}
