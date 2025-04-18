@@ -2,10 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(OutlineThing))]
 public abstract class Interactable : MonoBehaviour
 {
+    private bool eventCheck = false;
     //Placeholder method
     //This is meant to be overridden by subclasses of Interactable
+    void Start()
+    {
+        this.GetComponent<OutlineThing>().OutlineWidth = 5;
+        this.GetComponent<OutlineThing>().enabled = false;
+        PlayerEvent.sendPlayerData += HandlePlayerData;
+    }
+    
+    public void HandlePlayerData(Collider x)
+    {
+        if (!eventCheck)
+        {
+            if (x.gameObject == null)
+            {
+                this.GetComponent<OutlineThing>().enabled = false;
+            }
+            else
+            {
+                Debug.Log(x.gameObject.name);
+                if (ReferenceEquals(x.gameObject, this.gameObject))
+                {
+                    this.GetComponent<OutlineThing>().enabled = true;
+                }
+                else
+                {
+                    this.GetComponent<OutlineThing>().enabled = false;
+                }
+            }
+            eventCheck = true;
+        }
+        else
+        {
+            eventCheck = false;
+        }
+    }
+
     public virtual void Interact(GameObject player, Transform heldItem)
     {
         //Debug.Log(player.name + " is interacting with object " + item.name);

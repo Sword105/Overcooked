@@ -130,4 +130,11 @@ public class PlateInteractable : GrabInteractable
             }
         }
     }
+
+    public void EmptyPlate()
+    {
+        foodStored.Clear();
+        currentModelResource = null;
+        Destroy(foodModel.gameObject);
+    }
 }

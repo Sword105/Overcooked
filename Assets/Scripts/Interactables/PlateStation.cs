@@ -9,6 +9,9 @@ public class PlateStation : ContainerInteractable
 
     void Start()
     {
+        this.GetComponent<OutlineThing>().OutlineWidth = 5;
+        this.GetComponent<OutlineThing>().enabled = false;
+        PlayerEvent.sendPlayerData += HandlePlayerData;
         //This just sets storedItem to not be empty so that the interaction priority doesn't mess up
 
         for (int i = 0; i < 6; i++)

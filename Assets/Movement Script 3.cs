@@ -64,7 +64,6 @@ public class MovementScript3 : MonoBehaviour
 
         if (!Physics.Raycast(transform.position, transform.forward, 0.8f, raycastIgnoreLayer))
         {
-            Debug.Log("able to move");
             player.MovePosition((Vector3)transform.position + movementInput * speed * Time.deltaTime); // movementposition used for movement, vector3 for 3d
         }
         
