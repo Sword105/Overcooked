@@ -64,7 +64,7 @@ public class MovementScript3 : MonoBehaviour
     void FixedUpdate() {
 
         /*
-        if (!Physics.Raycast(transform.position, transform.forward, 0.8f, raycastIgnoreLayer))
+        if (!Physics.Raycast(transform.position, transform.forward, 1f, raycastIgnoreLayer))
         {
             player.MovePosition((Vector3)transform.position + movementInput * speed * Time.deltaTime); // movementposition used for movement, vector3 for 3d
         }

@@ -163,7 +163,7 @@ MonoBehaviour:
   dashCounter: 5
   raycastIgnoreLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 247
 --- !u!54 &285477981064297727
 Rigidbody:
   m_ObjectHideFlags: 0

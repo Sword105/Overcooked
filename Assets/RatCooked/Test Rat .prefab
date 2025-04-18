@@ -108,7 +108,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!82 &1070023725590866851
 AudioSource:
@@ -419,7 +419,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 71e410601911f2746865ffa205ad526b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.017
+      value: -0.32
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 71e410601911f2746865ffa205ad526b,
         type: 3}
