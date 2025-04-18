@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5350055773253901750}
   - component: {fileID: 3131724160665800251}
   - component: {fileID: 6231730751090464167}
+  - component: {fileID: 3034519866770122996}
   m_Layer: 3
   m_Name: 'Test Rat '
   m_TagString: Grabbable
@@ -60,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: d0659acbdf5579c41af731031b965f64, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -261,6 +262,8 @@ MonoBehaviour:
   nearbyRadius: 2.5
   finishedEating: 0
   currentlyEating: 0
+  patienceMeter: 5
+  maxPatience: 5
 --- !u!195 &6231730751090464167
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -283,6 +286,24 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3034519866770122996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3739193984520708261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &6772174222423138620
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +461,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 71e410601911f2746865ffa205ad526b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d0659acbdf5579c41af731031b965f64, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 71e410601911f2746865ffa205ad526b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: d0659acbdf5579c41af731031b965f64, type: 2}
     - target: {fileID: 919132149155446097, guid: 71e410601911f2746865ffa205ad526b,
         type: 3}
       propertyPath: m_Name

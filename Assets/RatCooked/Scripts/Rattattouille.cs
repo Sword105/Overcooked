@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Ratattouille : MonoBehaviour //RATMANAGER
 {
@@ -49,6 +50,7 @@ public class Ratattouille : MonoBehaviour //RATMANAGER
 
             if (RATPOCALYPSE)
             {
+                Debug.Log("RATPOCALPYSE");
                 SpawnRat(target);
                 SpawnRat(target);
                 SpawnRat(target);

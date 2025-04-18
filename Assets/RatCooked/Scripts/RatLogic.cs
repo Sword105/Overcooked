@@ -249,4 +249,34 @@ public class RatLogic : MonoBehaviour
         return false;
     }
 
+    
+    public void FadeOut(float duration)
+    {
+        StartCoroutine(FadeRoutine(0f, duration)); // Fade to alpha 0
+    }
+    
+    public void FadeIn(float duration)
+    {
+        StartCoroutine(FadeRoutine(1f, duration)); // Fade to alpha 1
+    }
+    
+    private IEnumerator FadeRoutine(float targetAlpha, float duration)
+    {
+        Renderer renderer = GetComponentInChildren<Renderer>();
+        if (renderer == null) yield break;
+    
+        Material mat = renderer.material;
+        Color startColor = mat.color;
+        Color endColor = new Color(startColor.r, startColor.g, startColor.b, targetAlpha);
+    
+        float t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime / duration;
+            mat.color = Color.Lerp(startColor, endColor, t);
+            yield return null;
+        }
+    }
+    
+    
 }

@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class RatCollisionOn : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool isSpawnZone = true; // toggle in Inspector
+    public float fadeDuration = 1.0f;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        RatLogic rat = other.GetComponent<RatLogic>();
+        if (rat == null) return;
+
+        if (isSpawnZone)
+        {
+            rat.FadeIn(fadeDuration);
+        }
+        else
+        {
+            rat.FadeOut(fadeDuration);
+        }
     }
 }
