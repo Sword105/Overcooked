@@ -10,6 +10,7 @@ public class PlayerSetupMenuController : MonoBehaviour
     private int playerIndex;
 
     public TextMeshProUGUI titleText;
+    public TextMeshProUGUI buttonText;
     public GameObject readyPanel;
     public Button readyButton;
 
@@ -24,13 +25,13 @@ public class PlayerSetupMenuController : MonoBehaviour
         Debug.Log("Ready button pressed");
         PlayerConfigManager.instance.ReadyPlayer(playerIndex);
 
-        if (PlayerConfigManager.instance.playerList[playerIndex].isReady)
+        if (!PlayerConfigManager.instance.playerList[playerIndex].isReady)
         {
-            titleText.text = "Ready Up";
+            buttonText.text = "Ready Up";
         }
         else
         {
-            titleText.text = "Cancel";
+            buttonText.text = "Cancel";
         }
     }
 }
