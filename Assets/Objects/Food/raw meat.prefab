@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 4125820452682814453}
   - component: {fileID: 825135406848309934}
   - component: {fileID: 80555028342594754}
-  - component: {fileID: 6648580225475681562}
   m_Layer: 3
   m_Name: raw meat
   m_TagString: Grabbable
@@ -170,28 +169,6 @@ BoxCollider:
   m_Size: {x: 0.21012354, y: 0.031838678, z: 0.40903652}
   m_Center: {x: 0.000000037252903, y: 0.015919339, z: 0}
 --- !u!114 &80555028342594754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3485377139243320888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc53f93470cdee54cae752f3eb335b67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnGround: 0
-  GroundedOffset: -0.14
-  GroundedRadius: 0.5
-  GroundLayers:
-    serializedVersion: 2
-    m_Bits: 128
-  RatTimerMax: 5
-  foodHealth: 5
-  isEaten: 0
-  ratEating: 0
---- !u!114 &6648580225475681562
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

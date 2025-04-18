@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heldItem: {fileID: 0}
   interactionRange: 0.8
-  interactionForwardOffset: 1
+  interactionForwardOffset: 0.6
   nearestInteractable: {fileID: 0}
 --- !u!114 &2523421344759467845
 MonoBehaviour:
@@ -158,12 +158,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 10
+  speed: 7
   dashing: 0
   dashCounter: 5
   raycastIgnoreLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 247
 --- !u!54 &285477981064297727
 Rigidbody:
   m_ObjectHideFlags: 0

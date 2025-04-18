@@ -85,6 +85,9 @@ public class SpoilTimer : MonoBehaviour
         {
             Ratattouille.Instance.RegisterSpoilTimer(this); //registers this instance into the list in the manager
         }
+
+        RatTimerMax = 2f;
+        CurrentRatTimer = RatTimerMax;
     }
 
     private void BeingEaten()

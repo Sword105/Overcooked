@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ready
+  m_text: Ready Up
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleText: {fileID: 2172089438265388589}
+  buttonText: {fileID: 2489733461662160301}
   readyPanel: {fileID: 4665663139702555703}
   readyButton: {fileID: 5119428206922100821}
 --- !u!1 &6177400267843566699
@@ -351,7 +352,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -14.4}
-  m_SizeDelta: {x: 85.8, y: 30}
+  m_SizeDelta: {x: 125.3, y: 35.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7198378360616501810
 CanvasRenderer:

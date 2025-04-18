@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactSound: {fileID: 0}
-  itemType: 5
+  itemType: 6
 --- !u!65 &6391263714109672786
 BoxCollider:
   m_ObjectHideFlags: 0
