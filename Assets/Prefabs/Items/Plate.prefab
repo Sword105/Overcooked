@@ -162,6 +162,8 @@ MonoBehaviour:
   - {fileID: -5658580269880237354, guid: ebbd3455874bc404db62f85773036c48, type: 3}
   - {fileID: -5658580269880237354, guid: 741fc39cd5648664e995ea10d0eb8553, type: 3}
   - {fileID: -5658580269880237354, guid: cdd4b067406f76945a468a060c02ce12, type: 3}
+  - {fileID: -5658580269880237354, guid: 0dc02f0ed79196a4a8eba9b4fd65bef4, type: 3}
+  - {fileID: -5658580269880237354, guid: eb931a6542c4f0c4f8ec31a5d5ddf833, type: 3}
   currentModelResource: {fileID: 0}
 --- !u!65 &8968953238646751623
 BoxCollider:

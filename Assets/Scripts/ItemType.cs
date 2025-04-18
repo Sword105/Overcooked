@@ -20,7 +20,11 @@ public enum ItemType
     COOKED_CHICKEN,
     RAW_FISH,
     COOKED_FISH,
-    SALAD
+    SALAD,
+    ROCK,
+    SPICY_ROCK,
+    PEPPER,
+    PEPPER_DUST
 
 
 }
