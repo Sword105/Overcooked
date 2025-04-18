@@ -41,8 +41,9 @@ public class ActionContainerInteractable : ContainerInteractable
             //Cook the item
             if(remainingInteractions <= 0){
                 cook();
-                base.Interact(player, heldItem);
+                
                 remainingInteractions = requiredInteractions;
+                
             }
         }
         else
@@ -90,6 +91,7 @@ public class ActionContainerInteractable : ContainerInteractable
             foodReady = true;
             Debug.Log("The food is ready!");
         }
+
     }
     
     

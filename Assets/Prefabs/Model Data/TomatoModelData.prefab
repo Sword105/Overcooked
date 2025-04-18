@@ -47,5 +47,5 @@ MonoBehaviour:
   modelIndicator: 6
   allowedItemTypes: 0c000000
   storedModelData:
-  - model: {fileID: 7113742550581899826, guid: b1b356c6710e6eb43b4a4d4c0d5a795c, type: 3}
+  - model: {fileID: 330375952182546725, guid: 0db09968b25161f4a9567dbc822960be, type: 3}
     neededItems: 060000000c000000

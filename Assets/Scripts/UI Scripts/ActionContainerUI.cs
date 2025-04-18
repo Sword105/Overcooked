@@ -11,7 +11,6 @@ public class ActionContainerUI : MonoBehaviour
     public Camera mainCamera;
     public TextMeshProUGUI text;
     ActionContainerInteractable actionContainerInteractable;
-    bool cancelCount = false;
     void Start()
     {
         actionContainerInteractable = TimedObjectPosition.GetComponent<ActionContainerInteractable>();
@@ -27,7 +26,7 @@ public class ActionContainerUI : MonoBehaviour
         string newText = timerNum.ToString();
         if (actionContainerInteractable.storedItem != null)
         {
-            if (timerNum > 0 && !cancelCount)
+            if (timerNum > 0)
             {
                 text.text = newText;
             }

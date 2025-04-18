@@ -47,5 +47,5 @@ MonoBehaviour:
   requiredItem: 0
   inputFoodItem: 13
   outputFoodItem: 14
-  outputGameObject: {fileID: 8415269075243266691, guid: bc21dbb6eec74d946beb42719c71bc69,
+  outputGameObject: {fileID: 4389144474757057119, guid: 81f52d315777b4140a97105ce255eaa6,
     type: 3}
