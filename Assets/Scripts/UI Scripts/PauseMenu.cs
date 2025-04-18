@@ -45,6 +45,10 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         Debug.Log("Loading menu...");
+        if (PlayerConfigManager.instance != null)
+        {
+            Destroy(PlayerConfigManager.instance.gameObject);
+        }
         SceneManager.LoadScene(0);
     }
 

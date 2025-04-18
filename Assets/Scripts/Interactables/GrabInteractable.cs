@@ -65,7 +65,7 @@ public class GrabInteractable : Interactable
 
             //If the player is holding nothing, reset the object's rotation, place it in front of the player, and disable its physics
             transform.rotation = Quaternion.identity;
-            transform.position = player.transform.position + player.transform.forward * 1.2f;
+            transform.position = player.transform.position + player.transform.forward * player.GetComponent<PlayerInteraction>().interactionForwardOffset;
             transform.SetParent(player.transform, true);
 
             transform.GetComponent<Rigidbody>().isKinematic = true;
