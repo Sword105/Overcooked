@@ -1120,8 +1120,6 @@ GameObject:
   - component: {fileID: 131126673}
   - component: {fileID: 131126672}
   - component: {fileID: 131126671}
-  - component: {fileID: 131126670}
-  - component: {fileID: 131126669}
   m_Layer: 0
   m_Name: Box_01 (7)
   m_TagString: Untagged
@@ -1144,39 +1142,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2016183618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &131126669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131126667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
---- !u!114 &131126670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131126667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31fd919c4fa840d4fb20255bf4ba4cfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  storedItem: {fileID: 0}
-  interactSound: {fileID: 0}
-  recipeList: []
 --- !u!65 &131126671
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7224,8 +7189,6 @@ GameObject:
   - component: {fileID: 725777398}
   - component: {fileID: 725777397}
   - component: {fileID: 725777396}
-  - component: {fileID: 725777395}
-  - component: {fileID: 725777394}
   m_Layer: 0
   m_Name: Box_01 (8)
   m_TagString: Untagged
@@ -7248,39 +7211,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2016183618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &725777394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725777392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
---- !u!114 &725777395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725777392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31fd919c4fa840d4fb20255bf4ba4cfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  storedItem: {fileID: 0}
-  interactSound: {fileID: 0}
-  recipeList: []
 --- !u!65 &725777396
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8824,7 +8754,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5087777, y: 0.43178466, z: 0.40597308}
+  m_Size: {x: 3, y: 1.5, z: 1}
   m_Center: {x: 0.004853606, y: 0.21589209, z: -0.0000007453597}
 --- !u!114 &853405102
 MonoBehaviour:
@@ -12278,7 +12208,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.50950557, y: 0.43178466, z: 0.40597308}
+  m_Size: {x: 1, y: 1.5, z: 1}
   m_Center: {x: 3.8857806e-16, y: 0.21589221, z: 0.0000021156632}
 --- !u!114 &1318457852
 MonoBehaviour:
