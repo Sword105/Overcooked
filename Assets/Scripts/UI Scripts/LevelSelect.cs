@@ -17,7 +17,7 @@ public class LevelSelect : MonoBehaviour
 
     public void selectJurassicLevel()
     {
-        setupManager.sceneToLoad = "InteractableTest";
+        setupManager.sceneToLoad = "StoneAge";
         //SceneManager.LoadScene(scene);
     }
     public void selectMedievalLevel()
