@@ -11,10 +11,25 @@ public class Ratattouille : MonoBehaviour //RATMANAGER
     [SerializeField] private List<Transform> RatSpawnLocations;
     [SerializeField] private List<Transform> RatEscapeLocations;
     [SerializeField] private List<GameObject> RatPrefabs;
+    [SerializeField] private int escapeCounter = 0;
+    [SerializeField] private bool RATPOCALYPSE = false;
     private List<RatLogic> activeRats = new List<RatLogic>();
-    
     private List<SpoilTimer> timers = new List<SpoilTimer>(); //creates a reference to a list of all spoil timer objects in the scene
+    private void Awake()
+    {
+        Instance = this;
+    }
 
+    private void Update()
+    {
+        if (escapeCounter >= 6)
+        {
+            RATPOCALYPSE = true;
+            Debug.Log("RATPOCALPSE");
+        }
+    }
+    
+    
     public Transform PassEscapeLocation() //kinda shitty code but tbh i cant think of an easy way to reference this to the rats
     {
         int escapeIndex = UnityEngine.Random.Range(0, RatEscapeLocations.Count);
@@ -23,14 +38,25 @@ public class Ratattouille : MonoBehaviour //RATMANAGER
     }
     public void RegisterSpoilTimer(SpoilTimer ratTimer) //must be public
     {
-        ratTimer.OnSummonedRat += (Transform target) => SpawnRat(target); //listener for the rat summon event by the timer
-    }
-    
-    private void Awake()
+        ratTimer.OnSummonedRat += (SpoilTimer target) => //listener for the rat summon event by the timer
         {
-            Instance = this;
-        }
-    private void SpawnRat(Transform target)
+            SpawnRat(target);
+
+            if (escapeCounter >= 3)
+            {
+                SpawnRat(target);
+            }
+
+            if (RATPOCALYPSE)
+            {
+                SpawnRat(target);
+                SpawnRat(target);
+                SpawnRat(target);
+            }
+        };
+        
+    }
+    private void SpawnRat(SpoilTimer target)
     {
         Transform chosenLocation = FindLocation(); 
         
@@ -39,19 +65,33 @@ public class Ratattouille : MonoBehaviour //RATMANAGER
         
         if (ai != null)
         {
-            ai.SetTarget(target); //basically just sets its first destination to the food that spawned it
+            ai.SetObssession(target); //sets a food for the rat to focus on, the food that spawned it in
+            ai.TargetObsession(); //basically just sets its first destination to the food that spawned it
 
-            ai.OnRatEating += HandleRatEating(); //subscribing to events
-            ai.OnRatEscaped += HandleRatEscaped();
+            ai.OnRatEating += HandleRatEating; //subscribing to events
+            ai.OnRatStoppedEating += HandleRatStoppedEating;
+            ai.OnRatEscaped += HandleRatEscaped;
         }
         
-        Debug.Log("Rat spawned at: " + chosenLocation.position + ", heading to " + target.position);
+        Debug.Log("Rat spawned at: " + chosenLocation.position + ", heading to " + target.transform.position);
 
     }
 
-    private void HandleRatEating()
+    private void HandleRatEating(RatLogic rat, SpoilTimer Obsession)
     {
-        
+        Obsession.ratEating++;
+    }
+
+    private void HandleRatStoppedEating(RatLogic rat, SpoilTimer Obsession)
+    {
+        Obsession.ratEating--;
+        Debug.Log(Obsession.ratEating);
+    }
+
+    private void HandleRatEscaped()
+    {
+        escapeCounter++;
+        Debug.Log("Rat escaped, counter is now  " + escapeCounter);
     }
     
     private Transform FindLocation() //essentially picks a random location from the list of existing spawn points for variety
