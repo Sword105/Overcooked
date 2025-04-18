@@ -11,6 +11,7 @@ public class LevelSelect : MonoBehaviour
 
     private void OnEnable()
     {
+        EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(firstSelection);
     }
 

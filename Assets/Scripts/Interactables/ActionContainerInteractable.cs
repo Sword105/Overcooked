@@ -6,7 +6,7 @@ public class ActionContainerInteractable : ContainerInteractable
 {
     //These variables track the interactions required and left in the container.    
     public int requiredInteractions = 8;
-    private int remainingInteractions;
+    public int remainingInteractions;
     private bool foodReady = false;
 
     
@@ -41,6 +41,7 @@ public class ActionContainerInteractable : ContainerInteractable
             //Cook the item
             if(remainingInteractions <= 0){
                 cook();
+                base.Interact(player, heldItem);
                 remainingInteractions = requiredInteractions;
             }
         }

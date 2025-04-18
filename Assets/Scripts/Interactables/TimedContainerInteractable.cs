@@ -8,7 +8,7 @@ public class TimedContainerInteractable : ContainerInteractable
     //public List<Recipe> recipeList;
     public float timerDuration = 5f; // total time in seconds
     public float burnTime = -8f;
-    private float timer;
+    public float timer;
     private bool isTiming = false;
     private bool foodReady = false;
 
