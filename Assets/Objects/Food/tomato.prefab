@@ -94,6 +94,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6391263714109672786}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ff67b2d0df360374eadb902749e92c49,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 789694159776252616}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ff67b2d0df360374eadb902749e92c49,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5986993434503112879}
   m_SourcePrefab: {fileID: 100100000, guid: ff67b2d0df360374eadb902749e92c49, type: 3}
 --- !u!1 &1911595180416401739 stripped
 GameObject:
@@ -163,3 +171,43 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1595084, y: 0.15370323, z: 0.15950842}
   m_Center: {x: 0, y: 0.076851614, z: 0}
+--- !u!114 &789694159776252616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911595180416401739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &-5986993434503112879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911595180416401739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc53f93470cdee54cae752f3eb335b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnGround: 0
+  GroundedOffset: -0.14
+  GroundedRadius: 0.5
+  GroundLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  RatTimerMax: 5
+  foodHealth: 5
+  isEaten: 0
+  ratEating: 0

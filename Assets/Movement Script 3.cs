@@ -79,7 +79,7 @@ public class MovementScript3 : MonoBehaviour
         float angle = Mathf.Atan2(movementInput.x, movementInput.z) * Mathf.Rad2Deg; //certain math thing that apparently almost all games use,
                                                                             //to make character face certain direction
 
-        float smooth = Mathf.SmoothDampAngle(transform.eulerAngles.y, angle, ref weirdFloat, 0.1f); //makes a smooth rotation variable for character to turn smoothly
+        float smooth = Mathf.SmoothDampAngle(transform.eulerAngles.y, angle, ref weirdFloat, 0.05f); //makes a smooth rotation variable for character to turn smoothly
                                                                                                     //has a weird float variable that is needed - not known why
 
         transform.rotation = Quaternion.Euler(0, smooth, 0); // used the smooth variable that was retrieved to make the rotation of character face the direction smoothly

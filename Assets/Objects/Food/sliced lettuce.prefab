@@ -107,6 +107,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: -5755214721800744367}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 00c00eb3c1ef198459a785438d03c5f0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8952781250487778259}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 00c00eb3c1ef198459a785438d03c5f0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1753364850685429916}
   m_SourcePrefab: {fileID: 100100000, guid: 00c00eb3c1ef198459a785438d03c5f0, type: 3}
 --- !u!1 &992860576009784902 stripped
 GameObject:
@@ -174,8 +182,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.8497486, y: 0.16110311, z: 1}
+  m_Center: {x: -0.0041742325, y: -0.010434061, z: -3.72546e-17}
 --- !u!23 &-3306669150342913166
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -226,3 +234,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992860576009784902}
   m_Mesh: {fileID: 4387450455345236887, guid: 00c00eb3c1ef198459a785438d03c5f0, type: 3}
+--- !u!114 &8952781250487778259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992860576009784902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &-1753364850685429916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992860576009784902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc53f93470cdee54cae752f3eb335b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnGround: 0
+  GroundedOffset: -0.14
+  GroundedRadius: 0.5
+  GroundLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  RatTimerMax: 5
+  foodHealth: 5
+  isEaten: 0
+  ratEating: 0

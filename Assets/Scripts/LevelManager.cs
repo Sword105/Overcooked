@@ -17,25 +17,31 @@ public struct Order
 
 public class LevelManager : MonoBehaviour
 {
+    [Header("Timers")]
     public float maxTimeInSeconds = 300f;
     public float timeForPlateRespawn = 10f;
     public float customerSpawnRate = 20f;
-    public int customersSatisfied;
-    public bool timeEnded = false;
-    public float currentTimeLeft;
 
+    [Header("Customers")]
     public Transform customerSpawnPoint;
     public GameObject customerPrefab;
 
-    public List<Order> orders;
-
-    public Transform customerEndPoint;
+    [Header("References")]
+    public LevelMenu menu;
     public PlateStation plateStation;
     public OrderStation orderStation;
-    public LevelMenu menu;
 
+    public Transform customerEndPoint;
     public Transform CopiedOrder;
     public Transform Organizer;
+    public TextMeshProUGUI text;
+
+    [Header("Debug")]
+    public bool timeEnded = false;
+    public int customersSatisfied;
+    public float currentTimeLeft;
+    public List<Order> orders;
+
 
     private GameObject currentExitingNPC;
 
@@ -51,8 +57,6 @@ public class LevelManager : MonoBehaviour
     {
         TimeTick();
     }
-
-    public TextMeshProUGUI text;
     void TimeTick()
     {
         if (!timeEnded && text != null)

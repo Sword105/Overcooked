@@ -17,9 +17,9 @@ public class SpawnPlayers : MonoBehaviour
         for (int i = 0; i < playerConfigs.Length; i++)
         {
             GameObject player;
-            player = Instantiate(player1Prefab, playerSpawns[i].position + new Vector3(0, 5, 0), playerSpawns[i].rotation, gameObject.transform);
+            //player = Instantiate(player1Prefab, playerSpawns[i].position + new Vector3(0, 5, 0), playerSpawns[i].rotation, gameObject.transform);
 
-            /*
+            
             if (i == 0)
             {
                 player = Instantiate(player1Prefab, playerSpawns[i].position + new Vector3(0, 5, 0), playerSpawns[i].rotation, gameObject.transform);
@@ -32,7 +32,7 @@ public class SpawnPlayers : MonoBehaviour
             {
                 player = null;
             }
-            */
+            
 
             player.GetComponent<PlayerInputHandler>().StartPlayer(playerConfigs[i]);
             players.Add(player.GetComponent<PlayerInteraction>());

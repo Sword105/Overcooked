@@ -102,6 +102,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1602430065646534375}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d8fcb9149562d5409517a593648afff,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2248720732622393006}
   m_SourcePrefab: {fileID: 100100000, guid: 9d8fcb9149562d5409517a593648afff, type: 3}
 --- !u!1 &224812119749960696 stripped
 GameObject:
@@ -231,3 +235,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-2248720732622393006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224812119749960696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc53f93470cdee54cae752f3eb335b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnGround: 0
+  GroundedOffset: -0.14
+  GroundedRadius: 0.5
+  GroundLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  RatTimerMax: 5
+  foodHealth: 5
+  isEaten: 0
+  ratEating: 0

@@ -10,13 +10,28 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d00c0a97250fb4c459a5ff890341bb8b,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: -0.034977943
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d00c0a97250fb4c459a5ff890341bb8b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.019478783
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d00c0a97250fb4c459a5ff890341bb8b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: -0.034977943
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d00c0a97250fb4c459a5ff890341bb8b,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d00c0a97250fb4c459a5ff890341bb8b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0257496
+      value: 2.57496
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d00c0a97250fb4c459a5ff890341bb8b,
         type: 3}
@@ -26,22 +41,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d00c0a97250fb4c459a5ff890341bb8b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.00000004371139
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d00c0a97250fb4c459a5ff890341bb8b,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -1.0165751e-15
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d00c0a97250fb4c459a5ff890341bb8b,
-        type: 3}
-      propertyPath: m_LocalRotation.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d00c0a97250fb4c459a5ff890341bb8b,
         type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d00c0a97250fb4c459a5ff890341bb8b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d00c0a97250fb4c459a5ff890341bb8b,
+        type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000021855694
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d00c0a97250fb4c459a5ff890341bb8b,
         type: 3}
@@ -58,6 +73,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5754084199372789682, guid: d00c0a97250fb4c459a5ff890341bb8b,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -8026552075551913057, guid: 7d69e5ac22ab28c45999bedc4aef7d30,
+        type: 3}
     - target: {fileID: 919132149155446097, guid: d00c0a97250fb4c459a5ff890341bb8b,
         type: 3}
       propertyPath: m_Name
@@ -86,7 +107,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d00c0a97250fb4c459a5ff890341bb8b,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2849010495125967989}
+      addedObject: {fileID: 1033601326063174202}
   m_SourcePrefab: {fileID: 100100000, guid: d00c0a97250fb4c459a5ff890341bb8b, type: 3}
 --- !u!1 &2530512602781574423 stripped
 GameObject:
@@ -108,7 +129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heldItem: {fileID: 0}
   interactionRange: 0.8
-  interactionForwardOffset: 1.3
+  interactionForwardOffset: 1
+  nearestInteractable: {fileID: 0}
 --- !u!114 &2523421344759467845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +191,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!136 &2849010495125967989
+--- !u!136 &1033601326063174202
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,7 +210,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.29670966
-  m_Height: 1.9975617
+  m_Radius: 14.835483
+  m_Height: 99.87805
   m_Direction: 1
-  m_Center: {x: -0.100994185, y: 0.26151752, z: 0.000000059604645}
+  m_Center: {x: -0.05346012, y: -4.7458687, z: -0.112947464}

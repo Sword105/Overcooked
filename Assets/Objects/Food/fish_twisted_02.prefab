@@ -98,6 +98,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3427311474762140796}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a62bce1346018845bf6f3b6c3115cdc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -673564617740353049}
   m_SourcePrefab: {fileID: 100100000, guid: 0a62bce1346018845bf6f3b6c3115cdc, type: 3}
 --- !u!1 &4577119041334794052 stripped
 GameObject:
@@ -185,3 +189,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3711571, y: 0.093743324, z: 0.25272506}
   m_Center: {x: -0.18143559, y: 0.047787204, z: 0.000000022351742}
+--- !u!114 &-673564617740353049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4577119041334794052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc53f93470cdee54cae752f3eb335b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnGround: 0
+  GroundedOffset: -0.14
+  GroundedRadius: 0.5
+  GroundLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  RatTimerMax: 5
+  foodHealth: 5
+  isEaten: 0
+  ratEating: 0

@@ -81,10 +81,42 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: aad2d6cd613f78b4ba254bdc6f503e5d,
         type: 3}
       propertyPath: m_Name
-      value: pepper dust (1)
+      value: pepper dust
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aad2d6cd613f78b4ba254bdc6f503e5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4199061094218011793}
   m_SourcePrefab: {fileID: 100100000, guid: aad2d6cd613f78b4ba254bdc6f503e5d, type: 3}
+--- !u!1 &3371205632773160070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aad2d6cd613f78b4ba254bdc6f503e5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2452637126134612439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-4199061094218011793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3371205632773160070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc53f93470cdee54cae752f3eb335b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnGround: 0
+  GroundedOffset: -0.14
+  GroundedRadius: 0.5
+  GroundLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  RatTimerMax: 5
+  foodHealth: 5
+  isEaten: 0
+  ratEating: 0
