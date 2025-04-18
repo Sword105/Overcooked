@@ -7,9 +7,12 @@ public class TimedContainerInteractable : ContainerInteractable
 
     //public List<Recipe> recipeList;
     public float timerDuration = 5f; // total time in seconds
+    public float burnTime = -8f;
     private float timer;
     private bool isTiming = false;
     private bool foodReady = false;
+
+    public GameObject burnedObject;
 
 
     public override void Interact(GameObject player, Transform heldItem)
@@ -38,10 +41,11 @@ public class TimedContainerInteractable : ContainerInteractable
         else
         {
             //If there is a stored item, and you aren't holding anything grab it
-            if (storedItem != null && foodReady == true && isTiming == false)
+            if (storedItem != null && foodReady == true)
             {
                 base.Interact(player, heldItem);
                 foodReady = false;
+                isTiming = false;
                 
             }
                 
@@ -75,8 +79,28 @@ public class TimedContainerInteractable : ContainerInteractable
 
             if (timer <= 0f)
             {
-                isTiming = false;
                 cook(); 
+            }
+
+            //The player didn't grab the object, so it burns
+            if(timer <= burnTime && burnedObject != null){
+                
+                
+                GameObject burnedObjectSpawned = Instantiate(burnedObject, storedItem.position, storedItem.rotation);
+                GameObject itemToEliminate = storedItem.gameObject;
+                storedItem = burnedObjectSpawned.transform;
+                Destroy(itemToEliminate);
+
+                //Disabling the physics and object rotation of the burn
+                storedItem.transform.position = new Vector3(transform.position.x, transform.GetComponent<MeshRenderer>().bounds.max.y + storedItem.GetComponent<MeshRenderer>().bounds.extents.y, transform.position.z);
+                storedItem.transform.SetParent(transform, true);
+                storedItem.GetComponent<Rigidbody>().isKinematic = true;
+                storedItem.GetComponent<Collider>().isTrigger = true;
+
+                Debug.Log("Your food burned");
+
+
+                isTiming = false;
             }
         }
     }
@@ -84,30 +108,31 @@ public class TimedContainerInteractable : ContainerInteractable
     //When the timer = 0 in Update(), Instantiates the item of the recipe, and destroys the stored item.
     
     void cook(){
-        
-        int inputRecipeList = findInputItemInRecipeList(storedItem.GetComponent<GrabInteractable>().itemType);
-       isTiming = false;
-        if(storedItem != null && inputRecipeList != -1){
+       
+        if(findInputItemInRecipeList(storedItem.GetComponent<GrabInteractable>().itemType) != -1){
+            int inputRecipeList = findInputItemInRecipeList(storedItem.GetComponent<GrabInteractable>().itemType);
+            if(storedItem != null && inputRecipeList != -1){
 
-            //Instantiating the cookedMeal, and destroying the ingredient's GameObject
-            GameObject cookedMeal = Instantiate(recipeList[inputRecipeList].outputGameObject, storedItem.position, storedItem.rotation);
+                //Instantiating the cookedMeal, and destroying the ingredient's GameObject
+                GameObject cookedMeal = Instantiate(recipeList[inputRecipeList].outputGameObject, storedItem.position, storedItem.rotation);
 
-            GameObject itemToEliminate = storedItem.gameObject;
-            storedItem = cookedMeal.transform;
-            //storedItem.tag = "Untagged";
-            Destroy(itemToEliminate);
-            
+                GameObject itemToEliminate = storedItem.gameObject;
+                storedItem = cookedMeal.transform;
+                //storedItem.tag = "Untagged";
+                Destroy(itemToEliminate);
+                
 
 
-            //Disabling the physics and object rotation of the cookedMeal
-            storedItem.transform.position = new Vector3(transform.position.x, transform.GetComponent<MeshRenderer>().bounds.max.y + storedItem.GetComponent<MeshRenderer>().bounds.extents.y, transform.position.z);
-            storedItem.transform.SetParent(transform, true);
-            storedItem.GetComponent<Rigidbody>().isKinematic = true;
-            storedItem.GetComponent<Collider>().isTrigger = true;
-            
-            foodReady = true;
-            
-            Debug.Log("The food is ready!");
+                //Disabling the physics and object rotation of the cookedMeal
+                storedItem.transform.position = new Vector3(transform.position.x, transform.GetComponent<MeshRenderer>().bounds.max.y + storedItem.GetComponent<MeshRenderer>().bounds.extents.y, transform.position.z);
+                storedItem.transform.SetParent(transform, true);
+                storedItem.GetComponent<Rigidbody>().isKinematic = true;
+                storedItem.GetComponent<Collider>().isTrigger = true;
+                
+                foodReady = true;
+                
+                Debug.Log("The food is ready!");
+            }
         }
     }
 
