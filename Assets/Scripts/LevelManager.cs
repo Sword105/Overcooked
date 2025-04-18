@@ -20,8 +20,9 @@ public class LevelManager : MonoBehaviour
     public float maxTimeInSeconds = 300f;
     public float timeForPlateRespawn = 10f;
     public float customerSpawnRate = 20f;
-    private bool timeEnded = false;
-    private float currentTimeLeft;
+    public int customersSatisfied;
+    public bool timeEnded = false;
+    public float currentTimeLeft;
 
     public Transform customerSpawnPoint;
     public GameObject customerPrefab;
@@ -73,6 +74,7 @@ public class LevelManager : MonoBehaviour
 
     public void CompleteOrder(Order order)
     {
+        customersSatisfied++;
         Destroy(order.orderUI);
         currentExitingNPC = order.customer;
         currentExitingNPC.GetComponent<NavMeshAgent>().SetDestination(orderStation.transform.position);
@@ -130,6 +132,7 @@ public class LevelManager : MonoBehaviour
 
     public void CustomerLeave()
     {
+        
         currentExitingNPC.GetComponent<NavMeshAgent>().SetDestination(customerSpawnPoint.transform.position);
         Destroy(currentExitingNPC, 3f);
     }
