@@ -2,6 +2,7 @@ public enum ItemType
 {
     NONE,
     POT,
+    GRILL,
     PAN,
     PLATE,
     
@@ -15,8 +16,13 @@ public enum ItemType
     CHEESE,
     LETTUCE,
     CHOPPED_LETTUCE,
+    RAW_CHICKEN,
+    COOKED_CHICKEN,
+    RAW_FISH,
+    COOKED_FISH
 
 
 }
+
 
 

@@ -25,6 +25,9 @@ public class PlayerConfigManager : MonoBehaviour
     public List<PlayerData> playerList;
     public string sceneToLoad;
 
+    public Mesh player1Model;
+    public Mesh player2Model;
+
     public static PlayerConfigManager instance;
 
     private void Awake()
@@ -53,7 +56,17 @@ public class PlayerConfigManager : MonoBehaviour
 
         if (!playerList.Any(p => p.playerIndex == pi.playerIndex))
         {
-            playerList.Add(new PlayerData(pi));
+            var newPlayer = new PlayerData(pi);
+            if (pi.playerIndex == 0)
+            {
+                newPlayer.playerModel = player1Model;
+            }
+            else
+            {
+                newPlayer.playerModel = player2Model;
+            }
+
+            playerList.Add(newPlayer);
         }
     }
 

@@ -10,7 +10,8 @@ public class GrabInteractable : Interactable
 {
     //public AudioSource audioSource;
     public AudioClip interactSound;
-    public ItemType itemType; 
+    public ItemType itemType;
+
 
     //Determines whether a object is grabable based on whether it is being held or not
     void Update()
@@ -26,6 +27,9 @@ public class GrabInteractable : Interactable
             if(transform.GetComponentInParent<TimedContainerInteractable>().getFoodReady() == false)
             {
                 transform.tag = "Untagged";
+            }
+            else{
+                transform.tag = "Grabbable";
             }
         }
         

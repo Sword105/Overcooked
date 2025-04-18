@@ -12,6 +12,7 @@ public struct Order
 {
     public GameObject customer;
     public List<ItemType> order;
+    public GameObject orderUI;
 }
 
 public class LevelManager : MonoBehaviour
@@ -28,11 +29,14 @@ public class LevelManager : MonoBehaviour
     public GameObject customerPrefab;
 
     public List<Order> orders;
-    
+
+    public Transform customerEndPoint;
     public PlateStation plateStation;
     public OrderStation orderStation;
     public LevelMenu menu;
 
+    public Transform CopiedOrder;
+    public Transform Organizer;
 
     private GameObject currentExitingNPC;
 
@@ -71,6 +75,7 @@ public class LevelManager : MonoBehaviour
 
     public void CompleteOrder(Order order)
     {
+        Destroy(order.orderUI);
         currentExitingNPC = order.customer;
         currentExitingNPC.GetComponent<NavMeshAgent>().SetDestination(orderStation.transform.position);
         Invoke("CustomerOrderPickup", 2f);
@@ -88,15 +93,28 @@ public class LevelManager : MonoBehaviour
             for (int i = 1; i <= numberOfCustomers; i++)
             {
                 Order newOrder = new Order();
-                newOrder.order = menu.RandomMenuItem();
+                var randomItems = menu.RandomMenuItem();
+                newOrder.order = randomItems.items;
                 newOrder.customer = Instantiate(customerPrefab, customerSpawnPoint);
+                
 
-                newOrder.customer.GetComponent<NavMeshAgent>().SetDestination(plateStation.transform.position);
+                Transform copiedOrder = Instantiate(CopiedOrder, Organizer);
+                newOrder.orderUI = copiedOrder.gameObject;
+
+                copiedOrder.GetComponent<OrderUI>().text.text = randomItems.text.text;
+                copiedOrder.GetComponent<OrderUI>().image.texture = randomItems.texture;
+                
+
+                newOrder.customer.GetComponent<NavMeshAgent>().SetDestination(customerEndPoint.transform.position);
                 orders.Add(newOrder);
 
                 yield return new WaitForSeconds(2f);
             }
             yield return new WaitForSeconds(spawnRate + (5 * numberOfCustomers));
+            while (orders.Count >= 5)
+            {
+                yield return new WaitForSeconds(1f);
+            }
         }
     }
 

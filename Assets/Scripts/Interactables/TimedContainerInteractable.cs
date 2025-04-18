@@ -75,16 +75,18 @@ public class TimedContainerInteractable : ContainerInteractable
 
             if (timer <= 0f)
             {
+                isTiming = false;
                 cook(); 
             }
         }
     }
 
     //When the timer = 0 in Update(), Instantiates the item of the recipe, and destroys the stored item.
+    
     void cook(){
         
         int inputRecipeList = findInputItemInRecipeList(storedItem.GetComponent<GrabInteractable>().itemType);
-       
+       isTiming = false;
         if(storedItem != null && inputRecipeList != -1){
 
             //Instantiating the cookedMeal, and destroying the ingredient's GameObject
@@ -104,7 +106,7 @@ public class TimedContainerInteractable : ContainerInteractable
             storedItem.GetComponent<Collider>().isTrigger = true;
             
             foodReady = true;
-            isTiming = false;
+            
             Debug.Log("The food is ready!");
         }
     }

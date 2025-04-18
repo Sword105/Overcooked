@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/RatcookedTest.unity.meta
 guid: e950859a530e1824f8f6f6bd7e173d4e
+========
+guid: 1ab7dced98ddf4c4e84fe40f05fe9ab9
+>>>>>>>> main:Assets/Stylized Stone/Demo.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
