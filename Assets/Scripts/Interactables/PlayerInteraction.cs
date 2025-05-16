@@ -93,16 +93,29 @@ public class PlayerInteraction : MonoBehaviour
 
             if (currentDistance < smallestDistance && other.transform.GetComponent<Interactable>() != null && !other.transform.Equals(heldItem))
             {
-                //Ignore if the interactable is NOT a grabable object or if it is an empty container object
-                if (heldItem == null && (other.GetComponent<GrabInteractable>() == null || !other.GetComponent<GrabInteractable>().isActiveAndEnabled)
-                    && (other.GetComponent<ContainerInteractable>() == null
-                    || other.GetComponent<ContainerInteractable>().storedItem == null
-                    && other.CompareTag("Grabbable")))
+                //Ignore if the interactable is NOT a grabbable object or if it is an empty container object
+                //I separated these into multiple, redundant if-statements for the stole purpose of legibility
+
+                if (heldItem == null)
                 {
-                    continue;
+                    if ((other.GetComponent<GrabInteractable>() == null || !other.CompareTag("Grabbable") || !other.GetComponent<GrabInteractable>().isActiveAndEnabled)
+                        && (other.GetComponent<ContainerInteractable>() == null
+                        || other.GetComponent<ContainerInteractable>().storedItem == null
+                        && other.CompareTag("Grabbable")))
+                    {
+                        continue;
+                    }
+                }
+                else
+                {
+                    if ((other.GetComponent<ContainerInteractable>() == null || other.GetComponent<ContainerInteractable>().storedItem != null) 
+                        && (other.GetComponent<PlateInteractable>() == null || !other.GetComponent<PlateInteractable>().isActiveAndEnabled))
+                    {
+                        continue;
+                    }
                 }
 
-                smallestDistance = currentDistance;
+                    smallestDistance = currentDistance;
                 nearest = other;
             }
         }

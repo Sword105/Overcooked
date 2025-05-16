@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class PlateStation : ContainerInteractable
 {
@@ -31,7 +32,11 @@ public class PlateStation : ContainerInteractable
         }
         */
 
-        UpdateOutline();
+        PlateInteractable topPlate;
+        if (plateStorage.TryPeek(out topPlate))
+        {
+            topPlate.GetComponent<OutlineThing>().enabled = UpdateOutline();
+        }
     }
 
     public override void Interact(GameObject player, Transform heldItem)
@@ -41,6 +46,7 @@ public class PlateStation : ContainerInteractable
         {
             PlateInteractable currentPlate = plateStorage.Pop();
 
+            currentPlate.GetComponent<PlateInteractable>().enabled = true;
             currentPlate.transform.rotation = Quaternion.identity;
             currentPlate.transform.position = player.transform.position + player.transform.forward * 1.2f;
             currentPlate.transform.SetParent(player.transform, true);
@@ -73,6 +79,7 @@ public class PlateStation : ContainerInteractable
         newPlate.tag = "Untagged";
 
         plateStorage.Push(newPlate.GetComponent<PlateInteractable>());
+        newPlate.GetComponent<PlateInteractable>().enabled = false;
     }
 }
 

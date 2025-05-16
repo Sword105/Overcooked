@@ -15,12 +15,22 @@ public class ContainerInteractable : Interactable
     {
         //Failsafe in case the player grabs the object, but the program forgets to remove the storedItem from memory
         //Note: I do not know why this issue happens sometimes for some people but not for others
-        if (storedItem != null && transform.GetComponentInChildren<GrabInteractable>() == null)
+        if (storedItem != null)
         {
-            storedItem = null;
+            if (storedItem.GetComponent<GrabInteractable>() == null)
+            {
+                storedItem = null;
+            }
+            else
+            {
+                storedItem.GetComponent<OutlineThing>().enabled = UpdateOutline();
+                GetComponent<OutlineThing>().enabled = false;
+            }
         }
-
-        UpdateOutline();
+        else
+        {
+            GetComponent<OutlineThing>().enabled = UpdateOutline();
+        }
     }
 
     public override void Interact(GameObject player, Transform heldItem)

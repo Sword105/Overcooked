@@ -15,6 +15,7 @@ public class GrabInteractable : Interactable
     //Determines whether a object is grabable based on whether it is being held or not
     void Update()
     {
+        /*
         if (transform.GetComponentInParent<PlayerInteraction>() != null)
         {
             transform.tag = "Untagged";
@@ -45,8 +46,9 @@ public class GrabInteractable : Interactable
         {
             transform.tag = "Grabbable";
         }
+        */
 
-        UpdateOutline();
+        GetComponent<OutlineThing>().enabled = UpdateOutline();
     }
 
     public override void Interact(GameObject player, Transform heldItem)

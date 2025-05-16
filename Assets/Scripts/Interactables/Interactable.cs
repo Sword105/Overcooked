@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(OutlineThing))]
 public abstract class Interactable : MonoBehaviour 
 {
-
     void Awake()
     {
         GetComponent<OutlineThing>().OutlineWidth = 5;
@@ -13,7 +12,7 @@ public abstract class Interactable : MonoBehaviour
         GetComponent<OutlineThing>().OutlineMode = OutlineThing.Mode.OutlineVisible;
     }
     
-    public void UpdateOutline()
+    public bool UpdateOutline()
     {
         bool isANearestInteractable = false;
         foreach (PlayerInteraction player in PlayerInfo.listOfPlayers())
@@ -27,11 +26,11 @@ public abstract class Interactable : MonoBehaviour
 
         if (isANearestInteractable)
         {
-            GetComponent<OutlineThing>().enabled = true;
+            return true;
         }
         else
         {
-            GetComponent<OutlineThing>().enabled = false;
+            return false;
         }
     }
 

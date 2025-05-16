@@ -28,7 +28,7 @@ public class PlateInteractable : GrabInteractable
             transform.tag = "Grabbable";
         }
 
-        UpdateOutline();
+        GetComponent<OutlineThing>().enabled = UpdateOutline();
     }
 
     public override void Interact(GameObject player, Transform heldItem)

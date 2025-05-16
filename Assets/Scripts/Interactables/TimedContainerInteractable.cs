@@ -14,7 +14,6 @@ public class TimedContainerInteractable : ContainerInteractable
 
     public GameObject burnedObject;
 
-
     public override void Interact(GameObject player, Transform heldItem)
     {
         if (heldItem != null)
@@ -25,6 +24,9 @@ public class TimedContainerInteractable : ContainerInteractable
             {
                 heldItem.transform.position = new Vector3(transform.position.x, transform.GetComponent<MeshRenderer>().bounds.max.y + heldItem.GetComponent<MeshRenderer>().bounds.extents.y, transform.position.z);
                 heldItem.transform.SetParent(transform, true);
+
+                heldItem.GetComponent<Interactable>().enabled = false;
+
                 base.Interact(player, heldItem);
 
                 StartTimer();
@@ -43,6 +45,8 @@ public class TimedContainerInteractable : ContainerInteractable
             //If there is a stored item, and you aren't holding anything grab it
             if (storedItem != null && foodReady == true)
             {
+                storedItem.GetComponent<Interactable>().enabled = true;
+
                 base.Interact(player, heldItem);
                 foodReady = false;
                 isTiming = false;
@@ -104,7 +108,19 @@ public class TimedContainerInteractable : ContainerInteractable
             }
         }
 
-        UpdateOutline();
+        if (storedItem == null)
+        {
+            GetComponent<OutlineThing>().enabled = UpdateOutline();
+        }
+        else if (foodReady)
+        {
+            Debug.Log("test");
+            storedItem.GetComponent<OutlineThing>().enabled = UpdateOutline();
+        }
+        else
+        {
+            GetComponent<OutlineThing>().enabled = false;
+        }
     }
 
     //When the timer = 0 in Update(), Instantiates the item of the recipe, and destroys the stored item.
