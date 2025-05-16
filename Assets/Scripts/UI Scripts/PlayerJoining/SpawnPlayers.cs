@@ -22,11 +22,11 @@ public class SpawnPlayers : MonoBehaviour
             
             if (i == 0)
             {
-                player = Instantiate(player1Prefab, playerSpawns[i].position + new Vector3(0, 5, 0), playerSpawns[i].rotation, gameObject.transform);
+                player = Instantiate(player1Prefab, playerSpawns[i].position + new Vector3(0, 0.95f, 0), playerSpawns[i].rotation, null);
             }
             else if (i == 1)
             {
-                player = Instantiate(player2Prefab, playerSpawns[i].position + new Vector3(0, 5, 0), playerSpawns[i].rotation, gameObject.transform);
+                player = Instantiate(player2Prefab, playerSpawns[i].position + new Vector3(0, 0.95f, 0), playerSpawns[i].rotation, null);
             }
             else
             {

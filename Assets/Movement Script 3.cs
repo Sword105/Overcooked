@@ -48,7 +48,7 @@ public class MovementScript3 : MonoBehaviour
 
 
     void Update() {
-
+        
        if(dashed && !isOnCoolDown) {
 
         StartCoroutine(Dash());
@@ -71,6 +71,7 @@ public class MovementScript3 : MonoBehaviour
         */
 
         player.MovePosition((Vector3)transform.position + movementInput * speed * Time.deltaTime);
+        player.angularVelocity = Vector3.zero;
 
 
         //makes the magnitude thing so that if you are clicking on a button or not - keeps character looking in the same direction
